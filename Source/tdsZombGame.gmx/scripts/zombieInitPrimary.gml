@@ -1,0 +1,4 @@
+///zombieInitPrimary();
+
+zombieInitCheckSpawn();
+zombieInitStates();

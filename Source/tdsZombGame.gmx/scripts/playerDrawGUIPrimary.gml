@@ -1,0 +1,5 @@
+///playerDrawGuiPrimary();
+
+playerDrawHUD();
+playerDrawResourceIcons();
+playerDrawGUITime();
