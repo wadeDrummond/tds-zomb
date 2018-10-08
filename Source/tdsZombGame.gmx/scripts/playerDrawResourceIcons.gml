@@ -5,8 +5,8 @@ var Height = display_get_gui_height();
 var resIconBorder = 24;
 var _xBase = Width - (resIconBorder * 2);
 var _yBase = (resIconBorder * 2);
-var _textShadow = 2;
-var _textScale = 1;
+var _textShadow = 3;
+var _textScale = 1.2;
 var iconAlpha = 1;
 var iconScale = 0.5;
 var _yStart = _yBase;
@@ -22,8 +22,8 @@ draw_set_font(fontResIcon);
 //First Calculation of Positions Only
 for (var i = 0; i < resourceCount; i ++)
     {
-        var _textWidth = (string_width(string(resourceAmount[i])) * 1.15) * (_textScale);
-        var _textHeight = (string_height(string(resourceAmount[i])) * 1.15) * (_textScale);
+        var _textWidth = (string_width(string(resourceAmount[i]))) * (_textScale);
+        var _textHeight = (string_height(string(resourceAmount[i]))) * (_textScale);
         var _Text = string(resourceAmount[i]);
 
         var xIcon = _xBase - (_textWidth) - (sprite_get_width(sprResourceIcons) * 0.45);
@@ -34,7 +34,7 @@ for (var i = 0; i < resourceCount; i ++)
 
 //Initialize Colours    
 var _Mix = sin_move(0, 1, 4, 0);
-var _Colour = merge_colour(c_white, c_ltgray, _Mix);
+var _Colour = merge_colour(c_white, c_dkgray, _Mix);
 var _Colour2 = merge_colour(c_ltgray, c_white, _Mix);
 
 //Initialize Rectangle

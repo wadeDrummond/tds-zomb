@@ -224,6 +224,7 @@
           <script>scripts\playerDrawGUITime.gml</script>
           <script>scripts\playerDrawHUD.gml</script>
           <script>scripts\playerDrawResourceIcons.gml</script>
+          <script>scripts\playerDrawHealthbars.gml</script>
         </scripts>
         <scripts name="Initialization">
           <script>scripts\playerInitAnimation.gml</script>
@@ -296,6 +297,7 @@
     <font>fonts\fontPickupTitle</font>
     <font>fonts\fontResIcon</font>
     <font>fonts\fontStats</font>
+    <font>fonts\fontLoading</font>
     <font>fonts\fontTime</font>
   </fonts>
   <objects name="objects">
@@ -359,7 +361,7 @@
   </rooms>
   <constants number="6">
     <constant name="debugMode">true</constant>
-    <constant name="gameVersion">"Version 0.38."</constant>
+    <constant name="gameVersion">"Version 0.385."</constant>
     <constant name="gameDemoDisclaimer">"This demo was created by Jackson Drummond. Some rights reserved.#Some copyrighted materials used with permission from the copright holders.#Some materials fall under Creative Commons licenses.#This is a very early alpha build of the game and does not represent the final product."</constant>
     <constant name="buildingWidth">2560</constant>
     <constant name="buildingHeight">1280</constant>

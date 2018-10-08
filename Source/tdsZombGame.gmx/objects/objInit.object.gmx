@@ -155,10 +155,10 @@ draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 draw_set_colour(c_white);
 draw_set_alpha(1);
-draw_set_font(fontStats);
+draw_set_font(fontLoading);
 
 var String = "LOADING SOUNDS#" + string(audio_group_load_progress(agSounds)) + "% COMPLETE";
-draw_text_transformed(room_width / 2, room_height / 2, String, 4, 4, 0);
+draw_text_transformed(room_width / 2, room_height / 2, String, 2, 2, 0);
 </string>
           </argument>
         </arguments>

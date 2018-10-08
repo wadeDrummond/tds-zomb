@@ -40,6 +40,9 @@ fullScale = 1;
 shadowLength = 4;
 
 healthbarDist = 128;
+
+xOffsetHealthbar = 0;
+yOffsetHealthbar = sprite_height;
 </string>
           </argument>
         </arguments>
@@ -75,51 +78,7 @@ if (Health &lt;= 0)
         instance_destroy();
     }
 
-if (instance_exists(objPlayer))
-    {
-        if (distance_to_object(objPlayer) &lt; healthbarDist)
-            {
-                lerpBar = lerp(lerpBar, 1, 0.15);
-            }
-        else
-            {
-                lerpBar = lerp(lerpBar, 0, 0.1);
-            }
-    }
-
 Scale = lerp(Scale, fullScale, 0.2);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="64">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Draw Healthbar
-
-lerpHealth = lerp(lerpHealth, Health, 0.15);
-lerpBarAlpha = lerp(0, 0.5, lerpBar);
-if (lerpHealth &lt; maxHealth)
-    {
-        draw_set_alpha(lerpBarAlpha);
-        drawHealthbar(0, sprite_height * 0.5, sprite_width * 1.25, sprite_height * 0.15, c_red, c_green, ((lerpHealth / maxHealth) * 100));
-        draw_set_alpha(1);
-    }
 </string>
           </argument>
         </arguments>

@@ -63,6 +63,7 @@ if (itemPickupLerp > 0)
         var yItemOffset = 14;
         var titleBorder = 24;
         var yTweenAmount = 2;
+        var titleTextShadow = 1;
         var titleFontScale = itemPickupLerp + sin_move(-0.01, 0.01, 6, 0);
         var itemPickupTitleWidth = (string_width(itemPickupTitle) + titleBorder) * titleFontScale;
         var itemPickupTitleHeight = (string_height(itemPickupTitle) + titleBorder) * titleFontScale;
@@ -97,10 +98,10 @@ if (itemPickupLerp > 0)
         draw_set_colour(c_black);
         draw_rectangle_width(xT1, yT1, xT2, yT2, titleOutlineWidth);
         draw_set_colour(titleColour2);
-        draw_text_transformed(xItemTitleText + 2, yItemTitleText + 2, itemPickupTitle, titleFontScale, titleFontScale, titleAngle);
+        draw_text_transformed(xItemTitleText + (titleTextShadow), yItemTitleText + (titleTextShadow), itemPickupTitle, titleFontScale, titleFontScale, titleAngle);
         draw_set_colour(titleColour1);
         draw_set_alpha(1);
-        draw_text_transformed(xItemTitleText - 2, yItemTitleText - 2, itemPickupTitle, titleFontScale, titleFontScale, titleAngle);
+        draw_text_transformed(xItemTitleText - (titleTextShadow), yItemTitleText - (titleTextShadow), itemPickupTitle, titleFontScale, titleFontScale, titleAngle);
         
         //Draw Circle Button Prompt
         draw_set_alpha(itemPickupAlpha);
