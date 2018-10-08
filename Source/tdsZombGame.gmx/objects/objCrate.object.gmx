@@ -79,6 +79,7 @@ if (Health &lt;= 0)
     }
 
 Scale = lerp(Scale, fullScale, 0.2);
+lerpHealth = lerp(lerpHealth, Health, 0.1);
 </string>
           </argument>
         </arguments>

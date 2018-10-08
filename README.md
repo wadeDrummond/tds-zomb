@@ -1,11 +1,12 @@
-# tds-zomb
 
-A small game demo.
-
+A small project by Jackson Drummond.
 
 Changelog
 
-Version 0.385 - October 8th, 2018.
+Version 0.388 - October 8th, 2018
++ Minor fixes.
+
+Version 0.387 - October 8th, 2018.
 + Tweaked health bars to damagable-objects.
 + Added readme.
 + Testing Discord/GitHub webhook.
@@ -39,9 +40,6 @@ Version 0.35 - October 3rd, 2018.
 
 
 
-
-
-
 Sounds Used:
 
 Campfire Crackle 1, rbirdwise
@@ -66,6 +64,7 @@ https://freesound.org/people/InspectorJ/sounds/336598/
 
 
 Art Used:
+
 "64 crosshairs pack", para
 https://opengameart.org/content/64-crosshairs-pack
 
@@ -78,3 +77,4 @@ https://opengameart.org/content/zombie-ui-pack
 
 "700+ RPG Icons", Lorc
 https://opengameart.org/content/700-rpg-icons
+

@@ -1,18 +1,16 @@
 ///playerDrawHealthbars();
 
 healthbarWidth = 96;
-healthbarHeight = 12;
+healthbarHeight = 8;
 
 with (all)
     {
         if (canBeDamaged(object_index))
             {
-                var healthAmount = (Health / maxHealth) * 100;
+                var healthAmount = (lerpHealth / maxHealth) * 100;
                 
                 if (healthAmount < 100)
                     {
-                        show_debug_message(object_get_name(object_index));
-                        
                         var _x1 = (x - view_xview) - other.healthbarWidth + xOffsetHealthbar;
                         var _y1 = (y - view_yview) - other.healthbarHeight + yOffsetHealthbar;
                         var _x2 = (x - view_xview) + other.healthbarWidth + xOffsetHealthbar;
