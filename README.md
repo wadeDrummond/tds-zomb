@@ -3,12 +3,17 @@ A small project by Jackson Drummond.
 
 Changelog
 
+Version 0.391 - October 9th, 2018
++ Fixed minor bug in last version.
+
 Version 0.39 - October 9th, 2018
 + Updated loading text.
 + Updated organization of Stats initialization.
 + Added "set_stat" command.
 + Added listener velocity for player; should make moving fast sound a little better.
 + Updated gamepad inputs.
++ Cleaned up input script.
+
 - Pressing Shift no longer forces crits. (Debugging tool)
 
 Version 0.388 - October 8th, 2018
