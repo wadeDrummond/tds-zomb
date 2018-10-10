@@ -49,6 +49,7 @@ Command[6] = "create";
 Command[7] = "clear";
 Command[8] = "debug_overlay";
 Command[9] = "set_time";
+Command[10] = "set_stat";
 
 commandArgumentMin[0] = 3;
 commandArgumentMin[1] = 0;
@@ -60,6 +61,7 @@ commandArgumentMin[6] = 4;
 commandArgumentMin[7] = 0;
 commandArgumentMin[8] = 1;
 commandArgumentMin[9] = 2;
+commandArgumentMin[10] = 2;
 
 hitEnter = false;
 </string>

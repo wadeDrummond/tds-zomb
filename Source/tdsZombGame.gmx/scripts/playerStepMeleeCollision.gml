@@ -21,7 +21,7 @@ if (imageIndex > weaponMeleeMinFrame[currentWeapon]) and (imageIndex < weaponMel
                                                             {
                                                                 Shake += 128;
                                                                 var baseDamage = (other.weaponDamage[other.currentWeapon] * (other.healthDamageMultiplier));
-                                                                hurtSelf(baseDamage * other.damageMultiplier, other.weaponCritChance[other.currentWeapon]);
+                                                                hurtSelf(baseDamage * other.damageMultiplier, (statsMap[? Stats.critChance] / 100) * other.weaponCritChance[other.currentWeapon]);
                                                                 
                                                                 ds_list_add(other.meleeHitList, id);
                                                             }

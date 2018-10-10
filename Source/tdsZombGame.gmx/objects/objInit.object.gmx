@@ -157,7 +157,7 @@ draw_set_colour(c_white);
 draw_set_alpha(1);
 draw_set_font(fontLoading);
 
-var String = "LOADING SOUNDS#" + string(audio_group_load_progress(agSounds)) + "% COMPLETE";
+var String = "LOADING#" + string(audio_group_load_progress(agSounds)) + "% COMPLETE";
 draw_text_transformed(room_width / 2, room_height / 2, String, 2, 2, 0);
 </string>
           </argument>

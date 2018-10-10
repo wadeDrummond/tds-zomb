@@ -48,3 +48,6 @@ clAddMessage("Toggles the debug overlays. (Framerate counter/audio debugger.) So
 clAddBlank();
 clAddMessage("set_time hours, minutes", baseColour);
 clAddMessage("Sets the time of the day night cycle. Uses the 24 hour clock model.", subColour);
+clAddBlank();
+clAddMessage("set_stat stat, value", baseColour);
+clAddMessage("Sets (Health, Stamina, Hunger, Thirst, maxHealth, maxStamina, maxHunger, maxThirst, critChance) to (value).", subColour);

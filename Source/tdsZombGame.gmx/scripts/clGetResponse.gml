@@ -123,6 +123,11 @@ for(var i = 0; i < commandAmount; i ++)
                                 clSetTime(Argument[1], Argument[2]);
                                 break;
                             }
+                        case "set_stat":
+                            {
+                                clSetStat(Argument[1], Argument[2]);
+                                break;
+                            }
                     }
 
                 break;

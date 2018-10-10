@@ -12,9 +12,8 @@ statsMap[? Stats.maxHunger] = 100;
 statsMap[? Stats.Hunger] = 100;
 statsMap[? Stats.maxThirst] = 100;
 statsMap[? Stats.Thirst] = 100;
-statsMap[? Stats.maxThirst] = 100;
-statsMap[? Stats.Stamina] = 100;
 statsMap[? Stats.maxStamina] = 100;
+statsMap[? Stats.Stamina] = 100;
 statsMap[? Stats.critChance] = 100;
 
 statColour[3] = c_red;
