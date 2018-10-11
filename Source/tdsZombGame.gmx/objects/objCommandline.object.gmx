@@ -51,6 +51,7 @@ Command[8] = "debug_overlay";
 Command[9] = "set_time";
 Command[10] = "set_stat";
 Command[11] = "set_global";
+Command[12] = "shake";
 
 commandArgumentMin[0] = 3;
 commandArgumentMin[1] = 0;
@@ -64,6 +65,7 @@ commandArgumentMin[8] = 1;
 commandArgumentMin[9] = 2;
 commandArgumentMin[10] = 2;
 commandArgumentMin[11] = 2;
+commandArgumentMin[12] = 1;
 
 hitEnter = false;
 </string>

@@ -6,6 +6,8 @@ baseDeceleration = 0.4;
 baseMoveSpeed = 4.5;
 randomInputs = false;
 randomToggled = false;
+lookFar = false;
+camMultiplier = 1;
 
 alarm[1] = room_speed * 2;
 

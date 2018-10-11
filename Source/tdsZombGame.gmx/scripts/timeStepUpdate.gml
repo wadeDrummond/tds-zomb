@@ -73,14 +73,7 @@ else
         minuteDraw = "0" + string(floor(Minutes));
     }
 
-if ((debugMode) and (keyboard_check(vk_shift)))
-    {
-        timeString = hourDraw + ":" + minuteDraw + " " + Mirid + "#" + string(Hours) + " " + string(Minutes) + "#" + string(drawTime);
-    }
-else
-    {
-        timeString = hourDraw + ":" + minuteDraw + " " + Mirid;
-    }
+timeString = hourDraw + ":" + minuteDraw + " " + Mirid;
     
 global.timeHours = Hours;
 global.timeMinutes = Minutes;

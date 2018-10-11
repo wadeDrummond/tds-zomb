@@ -133,6 +133,11 @@ for(var i = 0; i < commandAmount; i ++)
                                 clSetGlobalVariable(Argument[1], Argument[2]);
                                 break;
                             }
+                        case "shake":
+                            {
+                                Shake += real(Argument[1]);
+                                break;
+                            }
                     }
 
                 break;

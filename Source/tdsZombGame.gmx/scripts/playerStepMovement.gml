@@ -17,6 +17,8 @@ Down = clamp((downKeyboard  + downGamepad), 0, 1);
 Right = clamp((rightKeyboard + rightGamepad), 0, 1);
 Sprint = clamp((keyboard_check(vk_lshift)), 0, 1);
 
+lookFar = keyboard_check(vk_shift);
+
 playerStepUpdateSpeeds();
 
 movementTopDown(Acceleration, moveSpeed, Up, Left, Down, Right, Deceleration);

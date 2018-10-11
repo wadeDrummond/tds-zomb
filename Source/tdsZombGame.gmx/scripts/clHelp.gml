@@ -54,3 +54,6 @@ clAddMessage("Sets (Health, Stamina, Hunger, Thirst, maxHealth, maxStamina, maxH
 clAddBlank();
 clAddMessage("set_global variable, value", baseColour);
 clAddMessage("Sets a global variable to (value).", subColour);
+clAddBlank();
+clAddMessage("shake value", baseColour);
+clAddMessage("Adds (value) to the global shake amount.", subColour);

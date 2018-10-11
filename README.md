@@ -3,6 +3,11 @@ A small project by Jackson Drummond.
 
 Changelog
 
+Version 0.396 - October 11th, 2018
++ Added "shake" command.
++ Added far-looking. (Shift)
+- Removed debug information from on-HUD time.
+
 Version 0.395 - October 9th, 2018
 + Implemented motion blur.
 + Made screen shake when punching crate more intense.

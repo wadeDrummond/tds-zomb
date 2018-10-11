@@ -234,8 +234,8 @@ var colourMultiplier = lerp(0.2, 1, healthScale);
 if !(keyboard_check(vk_shift) and keyboard_check(vk_control) and debugMode)
     {
     
-        var motionBlurThreshold = 0.05;
-        var motionBlurFactor = 4;
+        var motionBlurThreshold = 0;
+        var motionBlurFactor = 0.70;
         var xDifference = clamp((view_xview - xViewLast) / (view_wview / motionBlurFactor), -0.25, 0.25);
         var yDifference = clamp((view_yview - yViewLast) / (view_hview / motionBlurFactor), -0.25, 0.25);
         
