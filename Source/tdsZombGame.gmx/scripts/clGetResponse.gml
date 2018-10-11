@@ -128,6 +128,11 @@ for(var i = 0; i < commandAmount; i ++)
                                 clSetStat(Argument[1], Argument[2]);
                                 break;
                             }
+                        case "set_global":
+                            {
+                                clSetGlobalVariable(Argument[1], Argument[2]);
+                                break;
+                            }
                     }
 
                 break;

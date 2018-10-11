@@ -3,6 +3,13 @@ A small project by Jackson Drummond.
 
 Changelog
 
+Version 0.395 - October 9th, 2018
++ Implemented motion blur.
++ Made screen shake when punching crate more intense.
++ Added "set_global" command.
++ Screen shakes slightly when picking up Wooden Planks.
++ Player gives off a slight glow. Helps spotting the player in the dark.
+
 Version 0.391 - October 9th, 2018
 + Fixed minor bug in last version.
 

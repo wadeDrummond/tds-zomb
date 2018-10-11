@@ -98,9 +98,10 @@
       <script>scripts\clInit.gml</script>
       <script>scripts\clParseInput.gml</script>
       <script>scripts\clPlayerType.gml</script>
-      <script>scripts\clSetVariable.gml</script>
-      <script>scripts\clSetTime.gml</script>
+      <script>scripts\clSetGlobalVariable.gml</script>
       <script>scripts\clSetStat.gml</script>
+      <script>scripts\clSetTime.gml</script>
+      <script>scripts\clSetVariable.gml</script>
     </scripts>
     <scripts name="Custom Functions">
       <script>scripts\collision_line_point.gml</script>
@@ -243,6 +244,7 @@
           <script>scripts\playerStepAnimationAttacking.gml</script>
           <script>scripts\playerStepAnimationNormal.gml</script>
           <script>scripts\playerStepCamera.gml</script>
+          <script>scripts\playerStepFootsteps.gml</script>
           <script>scripts\playerStepInventoryPickups.gml</script>
           <script>scripts\playerStepInventoryPickupsAttacking.gml</script>
           <script>scripts\playerStepMeleeCollision.gml</script>
@@ -250,11 +252,10 @@
           <script>scripts\playerStepShooting.gml</script>
           <script>scripts\playerStepSpeedCorrection.gml</script>
           <script>scripts\playerStepSprinting.gml</script>
+          <script>scripts\playerStepUpdateAudio.gml</script>
           <script>scripts\playerStepUpdateMeleePositions.gml</script>
           <script>scripts\playerStepUpdateSpeeds.gml</script>
           <script>scripts\playerStepUpdateStats.gml</script>
-          <script>scripts\playerStepUpdateAudio.gml</script>
-          <script>scripts\playerStepFootsteps.gml</script>
         </scripts>
       </scripts>
     </scripts>
@@ -362,7 +363,7 @@
   </rooms>
   <constants number="6">
     <constant name="debugMode">true</constant>
-    <constant name="gameVersion">"Version 0.391."</constant>
+    <constant name="gameVersion">"Version 0.395."</constant>
     <constant name="gameDemoDisclaimer">"This demo was created by Jackson Drummond. Some rights reserved.#Some copyrighted materials used with permission from the copright holders.#Some materials fall under Creative Commons licenses.#This is a very early alpha build of the game and does not represent the final product."</constant>
     <constant name="buildingWidth">2560</constant>
     <constant name="buildingHeight">1280</constant>

@@ -5,11 +5,12 @@ var _yAudioCenter = mean(view_yview, view_yview + view_hview);
 var _xVelocity = (x - xprevious);
 var _yVelocity = (y - yprevious);
 
-audio_listener_position(x, y, 0);
-audio_listener_orientation(0, 0, 1, 0, -1, 0);
-audio_listener_velocity(_xVelocity, _yVelocity, 0);
-
-
+if !onWeb
+    {
+        audio_listener_position(x, y, 0);
+        audio_listener_orientation(0, 0, 1, 0, -1, 0);
+        audio_listener_velocity(_xVelocity, _yVelocity, 0);
+    }
 
 //Heartbeats
 var healthRatio = (statsMap[? Stats.Health] / statsMap[? Stats.maxHealth])

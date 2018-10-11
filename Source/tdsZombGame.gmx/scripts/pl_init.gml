@@ -25,3 +25,4 @@ _pl_var_resolution_y = view_hport[0] / _pl_blurringAmount;
 
 pl_add(parLight);
 pl_add(objFirepit);
+pl_add(objPlayer);

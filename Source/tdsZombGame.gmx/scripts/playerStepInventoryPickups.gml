@@ -36,6 +36,8 @@ if (canPickup)
                                         
                                         resTextScale[0] = 1.65;
                                         
+                                        Shake += 2;
+                                        
                                         break;
                                     }
                             }

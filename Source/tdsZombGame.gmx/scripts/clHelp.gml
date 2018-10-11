@@ -29,7 +29,7 @@ clAddMessage("cicada", baseColour);
 clAddMessage("Spawns a cicada in a random tree.", subColour);
 clAddBlank();
 clAddMessage("teleport x, y", baseColour);
-clAddMessage("Teleports the player to the given coordinates.", subColour);
+clAddMessage("Teleports the player to the given coordinates. [SOMETIMES CRASHES ON HTML5.]", subColour);
 clAddBlank();
 clAddMessage("restart", baseColour);
 clAddMessage("Restarts the game.", subColour);
@@ -51,3 +51,6 @@ clAddMessage("Sets the time of the day night cycle. Uses the 24 hour clock model
 clAddBlank();
 clAddMessage("set_stat stat, value", baseColour);
 clAddMessage("Sets (Health, Stamina, Hunger, Thirst, maxHealth, maxStamina, maxHunger, maxThirst, critChance) to (value).", subColour);
+clAddBlank();
+clAddMessage("set_global variable, value", baseColour);
+clAddMessage("Sets a global variable to (value).", subColour);

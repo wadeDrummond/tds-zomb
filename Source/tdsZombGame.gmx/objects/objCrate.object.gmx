@@ -74,6 +74,8 @@ if (Health &lt;= 0)
                 instance_create(x, y, objWoodenPlank);
             }
             
+        Shake += 512;
+            
         audio_play_sound(sndWoodBreak, 0, false);
         instance_destroy();
     }

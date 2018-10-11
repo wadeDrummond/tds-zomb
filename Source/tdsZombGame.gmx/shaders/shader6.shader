@@ -4,7 +4,6 @@ attribute vec2 in_TextureCoord;
 
 varying vec2 var_texcoord;
 varying vec4 v_vColour;
-varying vec2 v_vTexcoord;
 
 void main()
 {
@@ -12,17 +11,15 @@ void main()
     
     v_vColour = in_Colour;
     var_texcoord = in_TextureCoord;
-    v_vTexcoord = in_TextureCoord;
 }
 
 //######################_==_YOYO_SHADER_MARKER_==_######################@~varying vec2 var_texcoord;
 varying vec4 v_vColour;
-uniform vec2 poss;//x,y
+
 uniform vec4 u_settings; //vignette inner circle size, vignette outter circle size, noise strength
 uniform vec3 u_vignette_colour; //R,G,B
 uniform vec2 random_pos;
 uniform vec2 pos;//x,y
-const int Quality = 32;
 
 float random(vec3 _scale, float _seed)
 {
@@ -33,12 +30,6 @@ void main()
 {
     vec4 base = texture2D( gm_BaseTexture, var_texcoord );
 
-        for( float i=0.0;i<1.0;i+=1.0/float(Quality) )
-    {
-            base += texture2D( gm_BaseTexture, var_texcoord+(0.5-poss)*i);
-    }
-    base /= float(Quality);
-    
     float vignette = distance( vec2(0.5, 0.5), var_texcoord );
     vignette = u_settings.x - vignette * u_settings.y;
     vec3 vignette_colour = (u_vignette_colour/255.0) * vignette;

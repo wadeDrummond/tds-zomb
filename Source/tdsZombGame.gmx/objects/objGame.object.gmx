@@ -184,7 +184,7 @@ randomPosition = shader_get_uniform(shdVignetteNoise, "random_pos");
 lastBrowserWidth = browser_width;
 lastBrowserHeight = browser_height;
 
-uPos = shader_get_uniform(shdMotionBlur, "pos");//uniform for x,y
+uPoss = shader_get_uniform(shdVignetteNoise, "poss");//uniform for x,y
 
 alarm[1] = room_speed * 3;
 
@@ -233,34 +233,32 @@ var colourMultiplier = lerp(0.2, 1, healthScale);
 
 if !(keyboard_check(vk_shift) and keyboard_check(vk_control) and debugMode)
     {
-        //Draw with Vignette + Noise
-        //surface_set_target(subSurface)
+    
+        var motionBlurThreshold = 0.05;
+        var motionBlurFactor = 4;
+        var xDifference = clamp((view_xview - xViewLast) / (view_wview / motionBlurFactor), -0.25, 0.25);
+        var yDifference = clamp((view_yview - yViewLast) / (view_hview / motionBlurFactor), -0.25, 0.25);
+        
+        if (abs(xDifference) &lt; motionBlurThreshold)
+            {
+                xDifference = 0;
+            }
+        if (abs(yDifference) &lt; motionBlurThreshold)
+            {
+                yDifference = 0;
+            }
+            
+        var xPos = xDifference + 0.5;
+        var yPos = yDifference + 0.5;
+    
+        //Draw with Vignette + Noise + Motion Blur
         shader_set(shdVignetteNoise);
         shader_set_uniform_f(uniSettings, smallRadius, largeRadius, noiseStrength, 1)
         shader_set_uniform_f(uniColour, 128 * colourMultiplier, 128 * colourMultiplier, 128 * colourMultiplier);
         shader_set_uniform_f(randomPosition, random_range(0.35, 0.5));
+        shader_set_uniform_f(uPoss, xPos, yPos);
         draw_surface_ext(application_surface, 0, 0, xScale, yScale, 0, c_white, 1);
         shader_reset();
-        //surface_reset_target();
-        
-        var xDifference = clamp((view_xview - xViewLast) / (view_wview / 1), -0.25, 0.25);
-        var yDifference = clamp((view_yview - yViewLast) / (view_hview / 1), -0.25, 0.25);
-        
-        if (abs(xDifference) &lt; 0.1)
-            {
-                xDifference = 0;
-            }
-        if (abs(yDifference) &lt; 0.1)
-            {
-                yDifference = 0;
-            }
-        var xPos = 0.5 + (xDifference);
-        var yPos = 0.5 + (yDifference);
-        
-        //shader_set(shdMotionBlur);
-        //shader_set_uniform_f(uPos, xPos, yPos);
-        //draw_surface_ext(application_surface, 0, 0, xScale, yScale, 0, c_white, 1);
-        //s//hader_reset();
     }
 else
     {

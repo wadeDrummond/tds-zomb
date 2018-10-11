@@ -19,9 +19,9 @@ if (imageIndex > weaponMeleeMinFrame[currentWeapon]) and (imageIndex < weaponMel
                                                         
                                                         if (canBeDamaged(object_index))
                                                             {
-                                                                Shake += 128;
+                                                                Shake += 96;
                                                                 var baseDamage = (other.weaponDamage[other.currentWeapon] * (other.healthDamageMultiplier));
-                                                                hurtSelf(baseDamage * other.damageMultiplier, (statsMap[? Stats.critChance] / 100) * other.weaponCritChance[other.currentWeapon]);
+                                                                hurtSelf(baseDamage * other.damageMultiplier, (other.statsMap[? Stats.critChance] / 100) * other.weaponCritChance[other.currentWeapon]);
                                                                 
                                                                 ds_list_add(other.meleeHitList, id);
                                                             }
@@ -30,7 +30,7 @@ if (imageIndex > weaponMeleeMinFrame[currentWeapon]) and (imageIndex < weaponMel
                                     }
                                 else
                                     {
-                                        show_message("Error, DS List 'meleeHitList' doesn't exist. Not sure what to do.");
+                                        clAddMessage("Error, DS List 'meleeHitList' doesn't exist. Not sure what to do.", c_red);
                                     }
                             }
                     }
