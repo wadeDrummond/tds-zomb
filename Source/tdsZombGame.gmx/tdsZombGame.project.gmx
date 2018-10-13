@@ -52,7 +52,9 @@
       <sprite>sprites\sprPlayerPistolAttack</sprite>
       <sprite>sprites\sprPlayerPistolIdle</sprite>
       <sprite>sprites\sprPlayerPistolWalk</sprite>
-      <sprite>sprites\sprPlayerUnarmedAttack</sprite>
+      <sprite>sprites\sprPlayerUnarmedAttack1</sprite>
+      <sprite>sprites\sprPlayerUnarmedAttack2</sprite>
+      <sprite>sprites\sprPlayerUnarmedAttack3</sprite>
       <sprite>sprites\sprPlayerUnarmedIdle</sprite>
       <sprite>sprites\sprPlayerUnarmedWalk</sprite>
     </sprites>
@@ -102,6 +104,7 @@
       <script>scripts\clSetStat.gml</script>
       <script>scripts\clSetTime.gml</script>
       <script>scripts\clSetVariable.gml</script>
+      <script>scripts\clGetObjects.gml</script>
     </scripts>
     <scripts name="Custom Functions">
       <script>scripts\collision_line_point.gml</script>
@@ -177,6 +180,7 @@
       <script>scripts\gameInitGenerateWorld.gml</script>
       <script>scripts\gameInitParticles.gml</script>
       <script>scripts\gameGetResourceCounts.gml</script>
+      <script>scripts\gameGetObjectNames.gml</script>
     </scripts>
     <scripts name="Light Engine">
       <script>scripts\timeInit.gml</script>
@@ -289,7 +293,9 @@
     <shader type="GLSLES">shaders\shdBktGlitch.shader</shader>
     <shader type="GLSLES">shaders\shdBktGlitchMac.shader</shader>
     <shader type="GLSLES">shaders\shdMotionBlur.shader</shader>
-    <shader type="GLSLES">shaders\shdVignetteNoise.shader</shader>
+    <shader type="GLSLES">shaders\shdMain3.shader</shader>
+    <shader type="GLSLES">shaders\shdMain2.shader</shader>
+    <shader type="GLSLES">shaders\shdMain1.shader</shader>
   </shaders>
   <fonts name="fonts">
     <font>fonts\fontCrit</font>
@@ -363,7 +369,7 @@
   </rooms>
   <constants number="6">
     <constant name="debugMode">true</constant>
-    <constant name="gameVersion">"Version 0.395."</constant>
+    <constant name="gameVersion">"Version 0.397."</constant>
     <constant name="gameDemoDisclaimer">"This demo was created by Jackson Drummond. Some rights reserved.#Some copyrighted materials used with permission from the copright holders.#Some materials fall under Creative Commons licenses.#This is a very early alpha build of the game and does not represent the final product."</constant>
     <constant name="buildingWidth">2560</constant>
     <constant name="buildingHeight">1280</constant>

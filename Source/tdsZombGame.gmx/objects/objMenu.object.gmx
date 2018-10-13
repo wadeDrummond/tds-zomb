@@ -33,7 +33,7 @@ lineList = -1;
 colourList = -1;
 
 clInit();
-clAddMessage("TopDown Survival Demo by Jackson Drummond. " + gameVersion, c_blue);
+clAddMessage("TopDown Survival Demo by Jackson Drummond. " + gameVersion, -135);
 clAddMessage("Press F12 for more details.", c_yellow);
 clAddMessage("Type 'help' for a list of commands.", c_yellow);
 

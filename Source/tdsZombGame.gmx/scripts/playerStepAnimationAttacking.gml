@@ -5,7 +5,7 @@ playerStepUpdateSpeeds();
 var animSpeedH = hsp[0] + hsp[1];
 var animSpeedV = vsp[0] + vsp[1];
 
-spriteIndex = attackSprite[currentWeapon]
+spriteIndex = chosenAttackSprite;
 
 if (abs((animSpeedH * moveSpeed)) > 0) and (abs((animSpeedV * moveSpeed)) > 0)
     {
@@ -21,6 +21,10 @@ legAnimSpeed = clamp((walkAnimSpeed / moveSpeed) * animationFactor, 0, 1);
 if (legAnimSpeed != 0)
     {
         legIndex = wrap(legIndex + animSpeed * 0.85, 1, sprite_get_number(sprPlayerLegs) - 1);
+    }
+else
+    {
+        legIndex = 0;
     }
 
 attackIndex += (healthDamageMultiplier);

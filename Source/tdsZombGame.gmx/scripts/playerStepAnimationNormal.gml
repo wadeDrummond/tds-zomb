@@ -18,6 +18,7 @@ else
 animSpeed = clamp((walkAnimSpeed / moveSpeed) * animationFactor, 0, 1);
 if (animSpeed == 0)
     {
+        legIndex = 0;
         imageIndex = wrap(imageIndex + idleAnimationFactor, 0, sprite_get_number(spriteIndex));
         spriteIndex = idleSprite[currentWeapon]
     }

@@ -22,7 +22,23 @@ if (Shoot)
                         soundPlayRandomPitch(choose(sndSwish1, sndSwish2, sndSwish3));
                         meleeHitList = ds_list_create();
                         State = playerStates.Attacking;
-                        Shake += 96;
+                        Shake += 8;
+                        
+                        if (wepStatsAltCount[currentWeapon] > 0)
+                            {
+                                if (choose(true, false))
+                                    {
+                                        chosenAttackSprite = wepStatsAltAnimations[currentWeapon, irandom(wepStatsAltCount[currentWeapon] - 1)];
+                                    }
+                                else
+                                    {
+                                        chosenAttackSprite = attackSprite[currentWeapon];
+                                    }
+                            }
+                        else
+                            {
+                                chosenAttackSprite = attackSprite[currentWeapon];
+                            }
                     }
             }
     }

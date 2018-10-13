@@ -1,4 +1,4 @@
-///timeDraw();
+///playerDrawGUITime();
 
 var Width = display_get_gui_width();
 var Height = display_get_gui_height();

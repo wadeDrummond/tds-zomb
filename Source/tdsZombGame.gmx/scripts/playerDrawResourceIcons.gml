@@ -27,7 +27,7 @@ for (var i = 0; i < resourceCount; i ++)
         var _Text = string(resourceAmount[i]);
 
         var xIcon = _xBase - (_textWidth) - (sprite_get_width(sprResourceIcons) * 0.45);
-        var yIcon = _yBase + (sprite_get_width(sprResourceIcons) * 0.15);
+        var yIcon = _yBase + (sprite_get_width(sprResourceIcons) * 0.5);
         
         _yBase += (_textHeight * 1.05);
     }

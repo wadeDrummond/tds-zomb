@@ -19,7 +19,7 @@ if (imageIndex > weaponMeleeMinFrame[currentWeapon]) and (imageIndex < weaponMel
                                                         
                                                         if (canBeDamaged(object_index))
                                                             {
-                                                                Shake += 96;
+                                                                Shake += 16;
                                                                 var baseDamage = (other.weaponDamage[other.currentWeapon] * (other.healthDamageMultiplier));
                                                                 hurtSelf(baseDamage * other.damageMultiplier, (other.statsMap[? Stats.critChance] / 100) * other.weaponCritChance[other.currentWeapon]);
                                                                 

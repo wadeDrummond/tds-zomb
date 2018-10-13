@@ -63,31 +63,6 @@ window_center();
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="2">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Save Variables
-
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="3" enumb="1">
       <action>
         <libid>1</libid>
@@ -177,22 +152,43 @@ gameInitParticles();
 
 event_user(0);
 
-uniSettings = shader_get_uniform(shdVignetteNoise, "u_settings");
-uniColour = shader_get_uniform(shdVignetteNoise, "u_vignette_colour");
-randomPosition = shader_get_uniform(shdVignetteNoise, "random_pos");
-
 lastBrowserWidth = browser_width;
 lastBrowserHeight = browser_height;
-
-uPoss = shader_get_uniform(shdVignetteNoise, "poss");//uniform for x,y
 
 alarm[1] = room_speed * 3;
 
 xPos = 0.5;
 yPos = 0.5;
 
+global.motionBlurQuality = 16;
+global.motionBlurIntensity = 0.7;
+global.motionBlurMax = 0.25;
+
 xViewLast = view_xview;
 yViewLast = view_yview;
+
+shaderQuality = 2;
+shaderIndex[2] = shdMain3;
+shaderIndex[1] = shdMain2;
+shaderIndex[0] = shdMain1;
+
+uniSettings[2] = shader_get_uniform(shdMain3, "u_settings");
+uniColour[2] = shader_get_uniform(shdMain3, "u_vignette_colour");
+randomPosition[2] = shader_get_uniform(shdMain3, "random_pos");
+mbQuality[2] = shader_get_uniform(shdMain3, "Quality");
+uPoss[2] = shader_get_uniform(shdMain3, "poss");//uniform for x,y
+
+uniSettings[1] = shader_get_uniform(shdMain2, "u_settings");
+uniColour[1] = shader_get_uniform(shdMain2, "u_vignette_colour");
+randomPosition[1] = shader_get_uniform(shdMain2, "random_pos");
+mbQuality[1] = shader_get_uniform(shdMain2, "Quality");
+uPoss[1] = shader_get_uniform(shdMain2, "poss");//uniform for x,y
+
+uniSettings[0] = shader_get_uniform(shdMain1, "u_settings");
+uniColour[0] = shader_get_uniform(shdMain1, "u_vignette_colour");
+randomPosition[0] = shader_get_uniform(shdMain1, "random_pos");
+mbQuality[0] = shader_get_uniform(shdMain1, "Quality");
+uPoss[0] = shader_get_uniform(shdMain1, "poss");//uniform for x,y
 </string>
           </argument>
         </arguments>
@@ -231,13 +227,18 @@ var colourMultiplier = lerp(0.2, 1, healthScale);
 
 //var subSurface = surface_create(Width, Height);
 
+shaderQuality = clamp(shaderQuality, 0, 2);
+global.motionBlurQuality = clamp(global.motionBlurQuality, 1, 254);
+global.motionBlurIntensity = clamp(global.motionBlurIntensity, 0, 2);
+global.motionBlurMax = clamp(global.motionBlurMax, 0, 20);
+
 if !(keyboard_check(vk_shift) and keyboard_check(vk_control) and debugMode)
     {
     
         var motionBlurThreshold = 0;
         var motionBlurFactor = 0.70;
-        var xDifference = clamp((view_xview - xViewLast) / (view_wview / motionBlurFactor), -0.25, 0.25);
-        var yDifference = clamp((view_yview - yViewLast) / (view_hview / motionBlurFactor), -0.25, 0.25);
+        var xDifference = clamp((view_xview - xViewLast) / (view_wview / global.motionBlurIntensity), global.motionBlurMax * -1, global.motionBlurMax);
+        var yDifference = clamp((view_yview - yViewLast) / (view_hview / global.motionBlurIntensity), global.motionBlurMax * -1, global.motionBlurMax);
         
         if (abs(xDifference) &lt; motionBlurThreshold)
             {
@@ -252,22 +253,28 @@ if !(keyboard_check(vk_shift) and keyboard_check(vk_control) and debugMode)
         var yPos = yDifference + 0.5;
     
         //Draw with Vignette + Noise + Motion Blur
-        shader_set(shdVignetteNoise);
-        shader_set_uniform_f(uniSettings, smallRadius, largeRadius, noiseStrength, 1)
-        shader_set_uniform_f(uniColour, 128 * colourMultiplier, 128 * colourMultiplier, 128 * colourMultiplier);
-        shader_set_uniform_f(randomPosition, random_range(0.35, 0.5));
-        shader_set_uniform_f(uPoss, xPos, yPos);
+        shader_set(shaderIndex[shaderQuality]);
+        shader_set_uniform_f(uniSettings[shaderQuality], smallRadius, largeRadius, noiseStrength, 1)
+        shader_set_uniform_f(uniColour[shaderQuality], 128 * colourMultiplier, 128 * colourMultiplier, 128 * colourMultiplier);
+        shader_set_uniform_f(randomPosition[shaderQuality], random_range(0.35, 0.5));
+        shader_set_uniform_f(uPoss[shaderQuality], xPos, yPos);
+        shader_set_uniform_f(mbQuality[shaderQuality], ceil(global.motionBlurQuality));
         draw_surface_ext(application_surface, 0, 0, xScale, yScale, 0, c_white, 1);
         shader_reset();
     }
 else
     {
         draw_surface_ext(application_surface, 0, 0, xScale, yScale, 0, c_white, 1);
+        draw_set_halign(fa_left);
+        draw_set_valign(fa_top);
+        draw_set_font(fontDebug);
+        draw_set_colour(c_dkgray);
+        draw_text(6, 6, string(round(fps)) + " " + string(round(Frame)));
+        draw_set_colour(c_white);
+        draw_text(4, 4, string(round(fps)) + " " + string(round(Frame)));
     }
     
-//surface_free(subSurface);
-    
-Frame += (delta_time / 1000000);
+Frame += ((delta_time / 1000000) * room_speed);
 
 xViewLast = view_xview;
 yViewLast = view_yview;

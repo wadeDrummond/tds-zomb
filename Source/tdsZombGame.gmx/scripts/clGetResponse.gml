@@ -53,7 +53,14 @@ for(var i = 0; i < commandAmount; i ++)
                             }
                         case "help":
                             {
-                                clHelp();
+                                if (argumentCount <= 1)
+                                    {
+                                        clHelp("1");
+                                    }
+                                else
+                                    {
+                                        clHelp(Argument[1]);
+                                    }
                                 break;
                             }
                         case "cicada":
@@ -136,6 +143,11 @@ for(var i = 0; i < commandAmount; i ++)
                         case "shake":
                             {
                                 Shake += real(Argument[1]);
+                                break;
+                            }
+                        case "get_objects":
+                            {
+                                clGetObjects();
                                 break;
                             }
                     }

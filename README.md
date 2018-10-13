@@ -3,6 +3,15 @@ A small project by Jackson Drummond.
 
 Changelog
 
+Version 0.397 - October 13th, 2018
++ Made far-looking look farther and calculate x/y separately
++ Rewrote how player attacking animations are stored.
++ Added alternate animations for Unarmed attacking (elbow, left punch).
++ Shake functions differently.
++ Seperated 'help' into pages. No argument defaults to page 1.
++ Added "get_objects" command.
+
+
 Version 0.396 - October 11th, 2018
 + Added "shake" command.
 + Added far-looking. (Shift)
@@ -25,7 +34,6 @@ Version 0.39 - October 9th, 2018
 + Added listener velocity for player; should make moving fast sound a little better.
 + Updated gamepad inputs.
 + Cleaned up input script.
-
 - Pressing Shift no longer forces crits. (Debugging tool)
 
 Version 0.388 - October 8th, 2018
