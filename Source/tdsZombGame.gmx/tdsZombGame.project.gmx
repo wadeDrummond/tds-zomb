@@ -11,10 +11,15 @@
     <extension index="3">extensions\TopDownMovement</extension>
   </NewExtensions>
   <sounds name="sound">
+    <sound>sound\ambGuitar1</sound>
+    <sound>sound\ambGuitar2</sound>
     <sound>sound\footstepConcrete1</sound>
     <sound>sound\footstepConcrete2</sound>
     <sound>sound\footstepGrass1</sound>
     <sound>sound\footstepGrass2</sound>
+    <sound>sound\sndActorHit1</sound>
+    <sound>sound\sndActorHit2</sound>
+    <sound>sound\sndActorHit3</sound>
     <sound>sound\sndCicada</sound>
     <sound>sound\sndCritical</sound>
     <sound>sound\sndFire</sound>
@@ -82,8 +87,10 @@
   <backgrounds name="background">
     <background>background\bckConcrete</background>
     <background>background\bckGrass</background>
+    <background>background\bckGrassOld</background>
     <background>background\tileCorners</background>
     <background>background\tileFloors</background>
+    <background>background\bckConcreteOld</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -99,6 +106,7 @@
       <script>scripts\clAddBlank.gml</script>
       <script>scripts\clAddMessage.gml</script>
       <script>scripts\clCreateInstance.gml</script>
+      <script>scripts\clGetObjects.gml</script>
       <script>scripts\clGetResponse.gml</script>
       <script>scripts\clHelp.gml</script>
       <script>scripts\clInit.gml</script>
@@ -108,7 +116,6 @@
       <script>scripts\clSetStat.gml</script>
       <script>scripts\clSetTime.gml</script>
       <script>scripts\clSetVariable.gml</script>
-      <script>scripts\clGetObjects.gml</script>
     </scripts>
     <scripts name="Custom Functions">
       <script>scripts\collision_line_point.gml</script>
@@ -193,6 +200,7 @@
     <scripts name="Miscellaneous">
       <script>scripts\drawHealthbar.gml</script>
       <script>scripts\hurtSelf.gml</script>
+      <script>scripts\ambientIsPlaying.gml</script>
     </scripts>
     <scripts name="Movement">
       <script>scripts\animation_end.gml</script>
@@ -297,9 +305,7 @@
     <shader type="GLSLES">shaders\shdBktGlitch.shader</shader>
     <shader type="GLSLES">shaders\shdBktGlitchMac.shader</shader>
     <shader type="GLSLES">shaders\shdMotionBlur.shader</shader>
-    <shader type="GLSLES">shaders\shdMain3.shader</shader>
-    <shader type="GLSLES">shaders\shdMain2.shader</shader>
-    <shader type="GLSLES">shaders\shdMain1.shader</shader>
+    <shader type="GLSLES">shaders\shdMain.shader</shader>
   </shaders>
   <fonts name="fonts">
     <font>fonts\fontCrit</font>
@@ -373,7 +379,7 @@
   </rooms>
   <constants number="6">
     <constant name="debugMode">true</constant>
-    <constant name="gameVersion">"Version 0.399."</constant>
+    <constant name="gameVersion">"Version 0.40."</constant>
     <constant name="gameDemoDisclaimer">"This demo was created by Jackson Drummond. Some rights reserved.#Some copyrighted materials used with permission from the copright holders.#Some materials fall under Creative Commons licenses.#This is a very early alpha build of the game and does not represent the final product."</constant>
     <constant name="buildingWidth">2560</constant>
     <constant name="buildingHeight">1280</constant>

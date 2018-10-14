@@ -28,6 +28,10 @@
             <string>///Initialize
 
 zombieInitPrimary();
+
+Health = 100;
+lerpHealth = 100;
+maxHealth = 100;
 </string>
           </argument>
         </arguments>

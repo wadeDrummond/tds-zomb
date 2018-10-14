@@ -37,10 +37,10 @@ currentStat[1] = statsMap[? Stats.Hunger];
 currentStat[0] = statsMap[? Stats.Thirst];
 
 statDepleteRate[Stats.Health] = 0.065;
-statDepleteRate[Stats.Hunger] = 0.0095625;
-statDepleteRate[Stats.Thirst] = 0.01275;
+statDepleteRate[Stats.Hunger] = 0.00478125;
+statDepleteRate[Stats.Thirst] = 0.006375;
 statDepleteRate[Stats.Stamina] = 1;
-statDepleteFactor = 0.5;
+statDepleteFactor = 0.35;
 
 statTitle[3] = "HEALTH";
 statTitle[2] = "STAMINA";

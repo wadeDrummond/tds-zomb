@@ -70,8 +70,8 @@ for(var i = 0; i < commandAmount; i ++)
                             }
                         case "teleport":
                             {
-                                objPlayer.x = Argument[1];
-                                objPlayer.y = Argument[2];
+                                objPlayer.x = real(Argument[1]);
+                                objPlayer.y = real(Argument[2]);
                                 
                                 clAddMessage("Teleported Player to (" + string(Argument[1]) + ", " + string(Argument[2]) + ").", c_green);
                                 break;
@@ -96,7 +96,7 @@ for(var i = 0; i < commandAmount; i ++)
                             }
                         case "create":
                             {
-                                clCreateInstance(Argument[1], Argument[2], Argument[3], Argument[4]);
+                                clCreateInstance(real(Argument[1]), real(Argument[2]), Argument[3], Argument[4]);
                                 break;
                             }
                         case "clear":
@@ -106,22 +106,26 @@ for(var i = 0; i < commandAmount; i ++)
                             }
                         case "debug_overlay":
                             {
-                                if (Argument[1] == "true")
+                                if Argument[1] == "fps"
                                     {
-                                        show_debug_overlay(true);
-                                        audio_debug(true);
-                                        clAddMessage("Toggled on debug overlays.", c_green);
+                                        if Argument[2] == "true"
+                                            show_debug_overlay(true);
+                                        else if (Argument[2]) == "false"
+                                            show_debug_overlay(false);
+                                        clAddMessage("Unexpected argument. Accepts an index (fps, audio) and a boolean (true, false).", c_red);
                                     }
-                                else if (Argument[1] == "false")
+                                else if Argument[1] == "audio"
                                     {
-                                        show_debug_overlay(false);
-                                        audio_debug(false);
-                                        clAddMessage("Toggled off debug overlays.", c_green);
+                                            if (Argument[2]) == "true"
+                                                audio_debug(true);
+                                            else if Argument[2] == "false"
+                                                audio_debug(false);
+                                            else
+                                                clAddMessage("Unexpected argument. Accepts an index (fps, audio) and a boolean (true, false).", c_red);
                                     }
                                 else
-                                    {
-                                        clAddMessage("Unexpected argument. Accepts a boolean, 'true' or 'false'.");
-                                    }
+                                    clAddMessage("Unexpected argument. Accepts an index (fps, audio) and a boolean (true, false).", c_red);
+                                    
                                 break;
                             }
                             

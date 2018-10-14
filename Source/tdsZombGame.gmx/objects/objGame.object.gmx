@@ -85,6 +85,7 @@ window_center();
 lastBrowserWidth = browser_width;
 lastBrowserHeight = browser_height;
 
+//Disclaimer
 if (keyboard_check_pressed(vk_f12))
     {
         var resourceCounts = gameGetResourceCounts();
@@ -96,6 +97,26 @@ if (keyboard_check_pressed(vk_f12))
 
         var resourceString = "Number of Resources: Sprites - " + spriteCount + ". Scripts - " + scriptCount + ". Objects - " + objectCount + ". Rooms - " + roomCount + ".";
         show_message_async(gameDemoDisclaimer + "#" + resourceString + "#" + gameVersion);
+    }
+    
+    
+//Ambient Noises (Guitar or otherwise)
+if !ambientIsPlaying()
+    {
+        if (ambientTimer &lt;= 0)
+            {
+                var checkAmbient = choose(ambGuitar1, ambGuitar2);
+                
+                while (checkAmbient == lastAmbient)
+                    var checkAmbient = choose(ambGuitar1, ambGuitar2);
+                    
+                lastAmbient = checkAmbient;
+                audio_play_sound(lastAmbient, 1, false);
+                
+                ambientTimer = irandom_range(minAmbient, maxAmbient);
+            }
+        else
+            ambientTimer = max(ambientTimer - 1, 0);
     }
 </string>
           </argument>
@@ -167,28 +188,16 @@ global.motionBlurMax = 0.25;
 xViewLast = view_xview;
 yViewLast = view_yview;
 
-shaderQuality = 2;
-shaderIndex[2] = shdMain3;
-shaderIndex[1] = shdMain2;
-shaderIndex[0] = shdMain1;
+uniSettings = shader_get_uniform(shdMain, "u_settings");
+uniColour = shader_get_uniform(shdMain, "u_vignette_colour");
+randomPosition = shader_get_uniform(shdMain, "random_pos");
+mbQuality = shader_get_uniform(shdMain, "Quality");
+uPoss = shader_get_uniform(shdMain, "poss");//uniform for x,y
 
-uniSettings[2] = shader_get_uniform(shdMain3, "u_settings");
-uniColour[2] = shader_get_uniform(shdMain3, "u_vignette_colour");
-randomPosition[2] = shader_get_uniform(shdMain3, "random_pos");
-mbQuality[2] = shader_get_uniform(shdMain3, "Quality");
-uPoss[2] = shader_get_uniform(shdMain3, "poss");//uniform for x,y
-
-uniSettings[1] = shader_get_uniform(shdMain2, "u_settings");
-uniColour[1] = shader_get_uniform(shdMain2, "u_vignette_colour");
-randomPosition[1] = shader_get_uniform(shdMain2, "random_pos");
-mbQuality[1] = shader_get_uniform(shdMain2, "Quality");
-uPoss[1] = shader_get_uniform(shdMain2, "poss");//uniform for x,y
-
-uniSettings[0] = shader_get_uniform(shdMain1, "u_settings");
-uniColour[0] = shader_get_uniform(shdMain1, "u_vignette_colour");
-randomPosition[0] = shader_get_uniform(shdMain1, "random_pos");
-mbQuality[0] = shader_get_uniform(shdMain1, "Quality");
-uPoss[0] = shader_get_uniform(shdMain1, "poss");//uniform for x,y
+minAmbient = room_speed * 10;
+maxAmbient = room_speed * 30;
+ambientTimer = irandom_range(minAmbient, maxAmbient);
+lastAmbient = choose(ambGuitar1, ambGuitar2);
 </string>
           </argument>
         </arguments>
@@ -227,7 +236,6 @@ var colourMultiplier = lerp(0.2, 1, healthScale);
 
 //var subSurface = surface_create(Width, Height);
 
-shaderQuality = clamp(shaderQuality, 0, 2);
 global.motionBlurQuality = clamp(global.motionBlurQuality, 1, 254);
 global.motionBlurIntensity = clamp(global.motionBlurIntensity, 0, 2);
 global.motionBlurMax = clamp(global.motionBlurMax, 0, 20);
@@ -253,12 +261,12 @@ if !(keyboard_check(vk_shift) and keyboard_check(vk_control) and debugMode)
         var yPos = yDifference + 0.5;
     
         //Draw with Vignette + Noise + Motion Blur
-        shader_set(shaderIndex[shaderQuality]);
-        shader_set_uniform_f(uniSettings[shaderQuality], smallRadius, largeRadius, noiseStrength, 1)
-        shader_set_uniform_f(uniColour[shaderQuality], 128 * colourMultiplier, 128 * colourMultiplier, 128 * colourMultiplier);
-        shader_set_uniform_f(randomPosition[shaderQuality], random_range(0.35, 0.5));
-        shader_set_uniform_f(uPoss[shaderQuality], xPos, yPos);
-        shader_set_uniform_f(mbQuality[shaderQuality], ceil(global.motionBlurQuality));
+        shader_set(shdMain);
+        shader_set_uniform_f(uniSettings, smallRadius, largeRadius, noiseStrength, 1)
+        shader_set_uniform_f(uniColour, 128 * colourMultiplier, 128 * colourMultiplier, 128 * colourMultiplier);
+        shader_set_uniform_f(randomPosition, random_range(0.35, 0.5));
+        shader_set_uniform_f(uPoss, xPos, yPos);
+        shader_set_uniform_f(mbQuality, ceil(global.motionBlurQuality));
         draw_surface_ext(application_surface, 0, 0, xScale, yScale, 0, c_white, 1);
         shader_reset();
     }

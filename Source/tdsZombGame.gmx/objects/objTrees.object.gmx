@@ -55,15 +55,15 @@ treesInit();
 var _canCheckPlayer = instance_exists(objPlayer);
 if (_canCheckPlayer)
     {
-        var xPlayerDistance = abs(objPlayer.x - room_width / 2);
-        var yPlayerDistance = abs(objPlayer.y - room_height / 2);
+        var xPlayerDistance = abs(objPlayer.x - room_width / windDistanceFactor);
+        var yPlayerDistance = abs(objPlayer.y - room_height / windDistanceFactor);
         var interpAmount = clamp((xPlayerDistance + yPlayerDistance) / windDistanceMax, windMin, windMax);
         
         audio_sound_gain(windSound, interpAmount, 0);
     }
     
 var randomTree = irandom(treeCount);
-part_particles_create(partSys, xPos[randomTree], yPos[randomTree], pType[particleTypes.Leaves], 4)
+part_particles_create(partSys, xPos[randomTree], yPos[randomTree], pType[particleTypes.Leaves], irandom(2))
 </string>
           </argument>
         </arguments>

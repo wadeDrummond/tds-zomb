@@ -3,6 +3,20 @@ A small project by Jackson Drummond.
 
 Changelog
 
+Version 0.40 - October 14th, 2018
++ Added ambient noises. (Guitar as of now)
++ Corrected the way footsteps are counted.
++ Made the room bigger.
++ Set wind volume/distance cutoff to be more intense.
++ Sharpened concrete texture.
++ Slightly updated main shader.
++ Debug overlays should no longer start by default.
++ Debug overlays are now toggled differently.
++ Stats deplete slower.
++ Fixed "teleport" crashing on HTML5.
++ Added impact noises for punching Zombies (placeholders for now.)
+- Properly removed Shift + CTRL for Crits.
+
 Version 0.399 - October 13th, 2018
 + Corrected positioning in HTML5 port.
 + Added footsteps (concrete + grass so far.)

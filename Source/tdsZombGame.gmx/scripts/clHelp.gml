@@ -1,7 +1,7 @@
 ///clHelp();
 
 var baseColour = c_white;
-var subColour = c_dkgray;
+var subColour = c_ltgray;
 
 clInit();
 
@@ -35,7 +35,7 @@ switch (real(argument0))
                 clAddMessage("clear", baseColour);
                 clAddMessage("Clears the command console.", subColour);
                 clAddBlank();
-                clAddMessage("debug_overlay (true/false)", baseColour);
+                clAddMessage("debug_overlay (fps/audio) (true/false)", baseColour);
                 clAddMessage("Toggles the debug overlays. (Framerate counter/audio debugger.) Sometimes works on HTML5.", subColour);
                 clAddBlank();
                 clAddMessage("set_time (hours) (minutes)", baseColour);

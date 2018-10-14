@@ -24,21 +24,24 @@ if (Shoot)
                         State = playerStates.Attacking;
                         Shake += 8;
                         
+                        /*
                         if (wepStatsAltCount[currentWeapon] > 0)
                             {
                                 if (choose(true, false))
-                                    {
-                                        chosenAttackSprite = wepStatsAltAnimations[currentWeapon, irandom(wepStatsAltCount[currentWeapon] - 1)];
-                                    }
+                                    chosenAttackSprite = wepStatsAltAnimations[currentWeapon, irandom(wepStatsAltCount[currentWeapon] - 1)];
                                 else
-                                    {
-                                        chosenAttackSprite = attackSprite[currentWeapon];
-                                    }
+                                    chosenAttackSprite = attackSprite[currentWeapon];
                             }
                         else
                             {
                                 chosenAttackSprite = attackSprite[currentWeapon];
                             }
+                        */
+                        
+                        if (wepStatsAltCount[currentWeapon] > 0)
+                            chosenAttackSprite = choose(attackSprite[currentWeapon], wepStatsAltAnimations[currentWeapon, irandom(wepStatsAltCount[currentWeapon] - 1)]);
+                        else
+                            chosenAttackSprite = attackSprite[currentWeapon];
                     }
             }
     }

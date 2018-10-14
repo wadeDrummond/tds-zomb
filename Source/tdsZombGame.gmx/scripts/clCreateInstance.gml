@@ -11,7 +11,7 @@ if (object_exists(_Index))
             {
                 instance_create(_xPos, _yPos, _Index);
             }
-        clAddMessage("Created " + string(_Count) + " instance(s) of + " + string(_Index) + " at (" + string(_xPos) + ", " + string(_yPos) + ".)", c_green);
+        clAddMessage("Created " + string(_Count) + " instance(s) of " + string(argument2) + " at (" + string(_xPos) + ", " + string(_yPos) + ".)", c_green);
     }
 else
     {

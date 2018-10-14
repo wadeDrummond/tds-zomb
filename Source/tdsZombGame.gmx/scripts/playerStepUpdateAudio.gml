@@ -5,7 +5,7 @@ var _yAudioCenter = mean(view_yview, view_yview + view_hview);
 var _xVelocity = (x - xprevious);
 var _yVelocity = (y - yprevious);
 
-audio_listener_position(x, y, 0);
+audio_listener_position(_xAudioCenter, _yAudioCenter, 0);
 audio_listener_orientation(0, 0, 1, 0, -1, 0);
 
 if !onWeb

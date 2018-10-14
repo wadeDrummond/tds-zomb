@@ -23,8 +23,6 @@ repeat(irandom(3))
 //Create Debug Object
 if (debugMode)
     {
-        show_debug_overlay(true);
-        audio_debug(true);
         instance_create(0, 0, objDebug);
     }
 

@@ -2,7 +2,7 @@
 
 var damageTextRange = 12;
 
-if (irandom(argument1) == 0) or (keyboard_check(vk_shift) and (keyboard_check(vk_control) and debugMode))
+if (irandom(argument1) == 0)
     {
         hurtAmount = (argument0 * (random_range(2.5, 4)));
         criticalDealt = true;
@@ -20,9 +20,14 @@ switch(object_index)
     {
         case objCrate:
             {
-                ID = audio_play_sound(sndWoodHit, 0, false);
-                audio_sound_pitch(ID, random_range(0.85, 1.05));
+                soundPlayRandomPitch(sndWoodHit);
                 Scale = 0.85;
+                break;
+            }
+        case objZombie:
+            {
+                var _soundIndex = choose(sndActorHit1, sndActorHit2, sndActorHit3);
+                soundPlayRandomPitch(_soundIndex)
                 break;
             }
     }

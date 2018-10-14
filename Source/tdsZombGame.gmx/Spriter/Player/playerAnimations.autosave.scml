@@ -662,7 +662,7 @@
             </mainline>
             <timeline id="0" name="torso">
                 <key id="0" spin="0">
-                    <object folder="0" file="0" x="-36.576923" y="80.442308"/>
+                    <object folder="0" file="0" x="-36.576923" y="80.442308" angle="0"/>
                 </key>
             </timeline>
             <timeline id="1" name="arm">

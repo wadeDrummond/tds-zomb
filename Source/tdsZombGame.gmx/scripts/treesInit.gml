@@ -31,6 +31,7 @@ windSound = audio_play_sound(sndWind, 1, true);
 windDistanceMax = (room_width / 2) + (room_height / 2) * 1.25;
 windMin = 0;
 windMax = 0.85;
+windDistanceFactor = 8;
 
 global.playCicada = false;
 
