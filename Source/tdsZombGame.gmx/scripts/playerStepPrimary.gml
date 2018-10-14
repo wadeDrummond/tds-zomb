@@ -17,6 +17,7 @@ switch(State)
                 playerStepAnimationNormal();
                 playerStepInventoryPickups();
                 playerStepUpdateAudio();
+                playerStepFootsteps();
                 break;
             }
             

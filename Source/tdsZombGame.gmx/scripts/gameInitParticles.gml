@@ -41,9 +41,9 @@ part_type_life(pFireEmbers, 120, 180);
 
 part_type_sprite(pLeaves, partLeaves, false, false, true);
 part_type_alpha3(pLeaves, 1, 1, 0);
-part_type_orientation(pLeaves, 0, 360, 1.65, 8, false);
-part_type_speed(pLeaves, 0.25, 2, -0.0025, 0);
-part_type_life(pLeaves, room_speed * 2, room_speed * 10);
+part_type_orientation(pLeaves, 0, 360, 1.65, 0, false);
+part_type_speed(pLeaves, 0.25, 1, -0.0015, 0);
+part_type_life(pLeaves, room_speed * 2, room_speed * 15);
 part_type_scale(pLeaves, 1.5, 1.5);
-part_type_size(pLeaves, 0.65, 1.2, 0, 0);
+part_type_size(pLeaves, 0.65, 1.45, 0, 0);
 part_type_direction(pLeaves, 0, 360, 0, 5);

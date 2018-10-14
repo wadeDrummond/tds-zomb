@@ -16,6 +16,8 @@ else
     }
 
 animSpeed = clamp((walkAnimSpeed / moveSpeed) * animationFactor, 0, 1);
+legAnimSpeed = animSpeed * legAnimationFactor;
+
 if (animSpeed == 0)
     {
         legIndex = 0;
@@ -24,7 +26,7 @@ if (animSpeed == 0)
     }
 else
     {
-        legIndex = wrap(legIndex + animSpeed * legAnimationFactor, 1, sprite_get_number(sprPlayerLegs) - 1);
+        legIndex = wrap(legIndex + legAnimSpeed, 1, sprite_get_number(sprPlayerLegs) - 1);
         imageIndex = wrap(imageIndex + animSpeed, 0, sprite_get_number(spriteIndex));
         spriteIndex = walkSprite[currentWeapon]
     }
@@ -34,6 +36,4 @@ var checkPointDir = point_direction(x, y, mouse_x, mouse_y);
 playerAngle = checkPointDir;
 
 if ((animSpeedH * moveSpeed) != 0) or ((animSpeedV * moveSpeed) != 0)
-    {
-        legAngle = point_direction(0, 0, (animSpeedH * moveSpeed), (animSpeedV * moveSpeed));
-    }
+    legAngle = point_direction(0, 0, (animSpeedH * moveSpeed), (animSpeedV * moveSpeed));

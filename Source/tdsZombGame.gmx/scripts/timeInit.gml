@@ -1,7 +1,7 @@
 ///timeInit();
 
 Time = 0;
-defaultTimeScale = 0.35;
+defaultTimeScale = 0.65;
 timeScale = defaultTimeScale * 1;
 Speed = (1 / (room_speed * timeScale));
 drawTime = lerp(lerp(0, 4, Time), 0, Time);

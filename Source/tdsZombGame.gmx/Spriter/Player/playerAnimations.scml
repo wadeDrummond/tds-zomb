@@ -8,6 +8,8 @@
         <file id="4" name="Images/head.png" width="96" height="96" pivot_x="0" pivot_y="1"/>
         <file id="5" name="Images/foot.png" width="96" height="64" pivot_x="0" pivot_y="1"/>
         <file id="6" name="Images/leg.png" width="96" height="64" pivot_x="0" pivot_y="1"/>
+        <file id="7" name="Images/hand_steadying_gun.png" width="64" height="64" pivot_x="0" pivot_y="1"/>
+        <file id="8" name="Images/hand_holding_gun.png" width="64" height="64" pivot_x="0" pivot_y="1"/>
     </folder>
     <entity id="0" name="Player">
         <obj_info name="bone_000" type="bone" w="46.6742" h="10"/>
@@ -660,7 +662,7 @@
             </mainline>
             <timeline id="0" name="torso">
                 <key id="0" spin="0">
-                    <object folder="0" file="0" x="-36.576923" y="80.442308" angle="0"/>
+                    <object folder="0" file="0" x="-36.576923" y="80.442308"/>
                 </key>
             </timeline>
             <timeline id="1" name="arm">
@@ -703,10 +705,10 @@
                     <bone y="-14.903846" angle="357.638625"/>
                 </key>
                 <key id="1" time="250" spin="-1">
-                    <bone x="0.509304" y="-30.742035" angle="52.533633"/>
+                    <bone x="5.161573" y="-26.592719" angle="64.173555"/>
                 </key>
                 <key id="2" time="500">
-                    <bone x="11.510948" y="-11.024908" angle="329.274739"/>
+                    <bone x="9.113905" y="-16.779438" angle="312.486076"/>
                 </key>
             </timeline>
             <timeline id="9" obj="1" name="bone_001" object_type="bone">
@@ -714,7 +716,7 @@
                     <bone x="-14.423077" y="23.557692" angle="0"/>
                 </key>
                 <key id="1" time="250">
-                    <bone x="-14.423077" y="23.557692" angle="300.444432"/>
+                    <bone x="-14.423077" y="23.557692" angle="289.660061"/>
                 </key>
                 <key id="2" time="500" spin="-1">
                     <bone x="-14.423077" y="23.557692" angle="51.224572"/>
@@ -725,10 +727,10 @@
                     <bone x="23.557692" y="46.153846" angle="14.519528"/>
                 </key>
                 <key id="1" time="250">
-                    <bone x="32.234196" y="41.782571" angle="324.015225"/>
+                    <bone x="34.610384" y="42.518571" angle="322.271997"/>
                 </key>
                 <key id="2" time="500">
-                    <bone x="23.115278" y="47.367365" angle="339.346959"/>
+                    <bone x="26.472765" y="39.215793" angle="330.3069"/>
                 </key>
             </timeline>
             <timeline id="11" obj="3" name="bone_003" object_type="bone">
@@ -736,10 +738,10 @@
                     <bone x="42.708765" y="-13.448478" angle="334.833305"/>
                 </key>
                 <key id="1" time="250" spin="-1">
-                    <bone x="45.446318" y="-14.69616" angle="328.08502"/>
+                    <bone x="45.446318" y="-14.69616" angle="321.119331"/>
                 </key>
                 <key id="2" time="500">
-                    <bone x="38.452609" y="-15.128419" angle="300.496502"/>
+                    <bone x="40.536518" y="-20.404283" angle="304.361097"/>
                 </key>
             </timeline>
             <timeline id="12" obj="4" name="bone_004" object_type="bone">
@@ -755,10 +757,10 @@
                     <bone x="8.173077" y="-68.269231" angle="336.104117"/>
                 </key>
                 <key id="1" time="250">
-                    <bone x="13.311372" y="-66.34792" angle="278.743089"/>
+                    <bone x="13.311372" y="-66.34792" angle="266.423716"/>
                 </key>
                 <key id="2" time="500">
-                    <bone x="13.557356" y="-70.040373" angle="320.925311"/>
+                    <bone x="13.792646" y="-71.127678" angle="322.831585"/>
                 </key>
             </timeline>
             <timeline id="14" obj="6" name="bone_006" object_type="bone">
@@ -766,10 +768,10 @@
                     <bone x="57.455704" y="15.285667" angle="42.315314"/>
                 </key>
                 <key id="1" time="250">
-                    <bone x="51.288168" y="13.693652" angle="137.467608"/>
+                    <bone x="51.288168" y="13.693652" angle="147.016085"/>
                 </key>
                 <key id="2" time="500" spin="-1">
-                    <bone x="59.154664" y="13.329874" angle="144.361846"/>
+                    <bone x="66.03212" y="12.120839" angle="154.888972"/>
                 </key>
             </timeline>
             <timeline id="15" obj="7" name="bone_007" object_type="bone">

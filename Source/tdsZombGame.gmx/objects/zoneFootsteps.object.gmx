@@ -27,6 +27,8 @@
             <kind>1</kind>
             <string>///Initialize
 
+zoneType = footstepTypes.Grass;
+
 enum footstepTypes
     {
         Grass, Concrete

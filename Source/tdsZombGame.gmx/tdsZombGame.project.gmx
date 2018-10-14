@@ -11,6 +11,10 @@
     <extension index="3">extensions\TopDownMovement</extension>
   </NewExtensions>
   <sounds name="sound">
+    <sound>sound\footstepConcrete1</sound>
+    <sound>sound\footstepConcrete2</sound>
+    <sound>sound\footstepGrass1</sound>
+    <sound>sound\footstepGrass2</sound>
     <sound>sound\sndCicada</sound>
     <sound>sound\sndCritical</sound>
     <sound>sound\sndFire</sound>
@@ -193,6 +197,7 @@
     <scripts name="Movement">
       <script>scripts\animation_end.gml</script>
       <script>scripts\animation_hit_frame.gml</script>
+      <script>scripts\animation_hit_frame_ext.gml</script>
       <script>scripts\approach.gml</script>
       <script>scripts\decimal_bbox_bottom.gml</script>
       <script>scripts\decimal_bbox_left.gml</script>
@@ -254,7 +259,6 @@
           <script>scripts\playerStepMeleeCollision.gml</script>
           <script>scripts\playerStepMovement.gml</script>
           <script>scripts\playerStepShooting.gml</script>
-          <script>scripts\playerStepSpeedCorrection.gml</script>
           <script>scripts\playerStepSprinting.gml</script>
           <script>scripts\playerStepUpdateAudio.gml</script>
           <script>scripts\playerStepUpdateMeleePositions.gml</script>
@@ -369,7 +373,7 @@
   </rooms>
   <constants number="6">
     <constant name="debugMode">true</constant>
-    <constant name="gameVersion">"Version 0.397."</constant>
+    <constant name="gameVersion">"Version 0.399."</constant>
     <constant name="gameDemoDisclaimer">"This demo was created by Jackson Drummond. Some rights reserved.#Some copyrighted materials used with permission from the copright holders.#Some materials fall under Creative Commons licenses.#This is a very early alpha build of the game and does not represent the final product."</constant>
     <constant name="buildingWidth">2560</constant>
     <constant name="buildingHeight">1280</constant>

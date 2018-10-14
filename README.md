@@ -3,6 +3,10 @@ A small project by Jackson Drummond.
 
 Changelog
 
+Version 0.399 - October 13th, 2018
++ Corrected positioning in HTML5 port.
++ Added footsteps (concrete + grass so far.)
+
 Version 0.397 - October 13th, 2018
 + Made far-looking look farther and calculate x/y separately
 + Rewrote how player attacking animations are stored.
@@ -77,6 +81,7 @@ Sounds Used:
 
 Campfire Crackle 1, rbirdwise
 https://freesound.org/people/rbirdwise/sounds/157185/
+(crossfaded by me)
 
 Cicada 1.aif, le_abbaye_Noirlac
 https://freesound.org/people/le_abbaye_Noirlac/sounds/129475/
@@ -95,6 +100,9 @@ Footsteps, Concrete, A.wav , InspectorJ
 https://freesound.org/people/InspectorJ/sounds/336598/
 (sliced by me)
 
+grass footsteps.mp3, DSOADigital
+https://freesound.org/people/DSOADigital/sounds/362250/
+(sliced by me)
 
 Art Used:
 
@@ -107,7 +115,9 @@ https://opengameart.org/content/animated-top-down-survivor-player
 
 "Zombie UI pack", Osmic
 https://opengameart.org/content/zombie-ui-pack
+(unused so far)
 
 "700+ RPG Icons", Lorc
 https://opengameart.org/content/700-rpg-icons
+(unused so far)
 

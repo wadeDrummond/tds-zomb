@@ -89,7 +89,7 @@
     <instance objName="objCrate" x="512" y="512" name="inst_C93C7C8A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTable" x="2304" y="1280" name="inst_2D555006" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWoodenWallVertical" x="2560" y="1024" name="inst_FA515502" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPlayer" x="1696" y="1760" name="inst_9FEE3499" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objPlayer" x="1664" y="1760" name="inst_9FEE3499" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCrate" x="768" y="512" name="inst_F42F74C0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCrate" x="1024" y="512" name="inst_4A7481C7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCrate" x="1024" y="768" name="inst_52AD276D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -102,9 +102,10 @@
     <instance objName="objGame" x="0" y="0" name="inst_80827E97" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWeaponPickup" x="1696" y="2016" name="inst_2BCBD32B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWoodenDoorVertical" x="1280" y="512" name="inst_C245FD7E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="zoneFootsteps" x="256" y="256" name="inst_B42451DB" locked="0" code="zoneType = footstepTypes.Concrete;" scaleX="9.16078472137451" scaleY="3.01176476478577" colour="4294967295" rotation="0"/>
-    <instance objName="zoneFootsteps" x="512" y="1024" name="inst_EB72131A" locked="0" code="zoneType = footstepTypes.Concrete;" scaleX="8.125" scaleY="2.125" colour="4294967295" rotation="0"/>
+    <instance objName="zoneFootsteps" x="288" y="288" name="inst_B42451DB" locked="0" code="zoneType = footstepTypes.Concrete;" scaleX="8.875" scaleY="3" colour="4294967295" rotation="0"/>
+    <instance objName="zoneFootsteps" x="544" y="1056" name="inst_EB72131A" locked="0" code="zoneType = footstepTypes.Concrete;" scaleX="7.875" scaleY="1.875" colour="4294967295" rotation="0"/>
     <instance objName="objWoodenWallVertical" x="1280" y="640" name="inst_59610BF2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="zoneFootsteps" x="512" y="1280" name="inst_4489679B" locked="0" code="zoneType = footstepTypes.Concrete;&#xA;" scaleX="0.125984251499176" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tileFloors" x="256" y="256" w="256" h="256" xo="0" yo="0" id="10000420" name="inst_46ABAD1E" depth="260" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

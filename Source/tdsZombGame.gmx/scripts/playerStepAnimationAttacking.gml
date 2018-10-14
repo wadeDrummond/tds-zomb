@@ -16,11 +16,11 @@ else
         var walkAnimSpeed = (abs((animSpeedH * moveSpeed)) + (abs((animSpeedV * moveSpeed))));
     }
 
-animSpeed = animationFactor * weaponSpeed[currentWeapon];
-legAnimSpeed = clamp((walkAnimSpeed / moveSpeed) * animationFactor, 0, 1);
+animSpeed = clamp((walkAnimSpeed / moveSpeed) * animationFactor, 0, 1);
+legAnimSpeed = animSpeed * legAnimationFactor;
 if (legAnimSpeed != 0)
     {
-        legIndex = wrap(legIndex + animSpeed * 0.85, 1, sprite_get_number(sprPlayerLegs) - 1);
+        legIndex = wrap(legIndex + (legAnimSpeed), 1, sprite_get_number(sprPlayerLegs) - 1);
     }
 else
     {

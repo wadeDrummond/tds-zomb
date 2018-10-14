@@ -63,7 +63,7 @@ if (_canCheckPlayer)
     }
     
 var randomTree = irandom(treeCount);
-part_particles_create(partSys, xPos[randomTree], yPos[randomTree], pType[particleTypes.Leaves], 1)
+part_particles_create(partSys, xPos[randomTree], yPos[randomTree], pType[particleTypes.Leaves], 4)
 </string>
           </argument>
         </arguments>
