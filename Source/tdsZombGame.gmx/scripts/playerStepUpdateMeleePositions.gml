@@ -1,6 +1,6 @@
 ///playerStepUpdateMeleePositions();
 
-var Range = weaponRange[currentWeapon];
+var Range = weaponRange[currentWeapon] * weaponRangeMultiplier;
 var sideMultiplier = 1;
 var angleDifference = 35;
 

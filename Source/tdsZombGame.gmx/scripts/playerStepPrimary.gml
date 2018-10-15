@@ -1,9 +1,7 @@
 ///playerStepPrimary();
 
 if (instance_exists(objCommandline))
-    {
-        exit;
-    }
+    exit;
 
 playerStepUpdateMeleePositions();
 
@@ -11,11 +9,12 @@ switch(State)
     {
         case playerStates.Normal:
             {
+                playerStepInputs();
                 playerStepSprinting();
                 playerStepMovement();
                 playerStepShooting();
                 playerStepAnimationNormal();
-                playerStepInventoryPickups();
+                playerStepInteracting();
                 playerStepUpdateAudio();
                 playerStepFootsteps();
                 break;
@@ -23,6 +22,7 @@ switch(State)
             
         case playerStates.Attacking:
             {
+                playerStepInputs();
                 playerStepMovement();
                 playerStepMeleeCollision();
                 playerStepAnimationAttacking();

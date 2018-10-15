@@ -1,8 +1,5 @@
 ///playerStepShooting();
 
-Shoot = (mouse_check_button(mb_left) or gamepad_button_check(0, gp_shoulderrb));
-altShoot = (mouse_check_button(mb_right) or gamepad_button_check(0, gp_shoulderlb));
-
 if (Shoot)
     {
         attackIndex = 0;

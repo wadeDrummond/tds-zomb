@@ -1,13 +1,12 @@
 ///Declare Movement Variables
 
 movementInput = false;
-baseAcceleration = 0.65;
-baseDeceleration = 0.4;
-baseMoveSpeed = 4.5;
+baseAcceleration = 0.70;
+baseDeceleration = 0.45;
+baseMoveSpeed = 5;
 randomInputs = false;
 randomToggled = false;
 lookFar = false;
-camMultiplier = 1;
 
 alarm[1] = room_speed * 2;
 

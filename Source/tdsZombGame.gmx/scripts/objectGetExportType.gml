@@ -11,12 +11,14 @@ switch (argument0)
                 return objectExports.buildingPlacable;
                 break;
             }
-          
+        
+        /*  
         case objNoTile:
             {
                 return objectExports.customTile;
                 break;
             }
+        */
 
         default:
             {

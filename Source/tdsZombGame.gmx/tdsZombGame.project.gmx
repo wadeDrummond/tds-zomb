@@ -47,6 +47,7 @@
     </sprites>
     <sprites name="Masks">
       <sprite>sprites\maskActor</sprite>
+      <sprite>sprites\maskNone</sprite>
     </sprites>
     <sprites name="Particles">
       <sprite>sprites\partFire</sprite>
@@ -72,7 +73,7 @@
     <sprite>sprites\sprCrosshair2</sprite>
     <sprite>sprites\sprFirepit</sprite>
     <sprite>sprites\sprNoTile</sprite>
-    <sprite>sprites\zoneFootstepsSprite</sprite>
+    <sprite>sprites\sprResourceIcons</sprite>
     <sprite>sprites\sprSmears</sprite>
     <sprite>sprites\sprTitle</sprite>
     <sprite>sprites\sprTree</sprite>
@@ -82,7 +83,7 @@
       <sprite>sprites\sprZombieLegs</sprite>
       <sprite>sprites\sprZombieWalk</sprite>
     </sprites>
-    <sprite>sprites\sprResourceIcons</sprite>
+    <sprite>sprites\zoneFootstepsSprite</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bckConcrete</background>
@@ -256,13 +257,15 @@
           <script>scripts\playerInitFootsteps.gml</script>
           <script>scripts\playerInitAudio.gml</script>
           <script>scripts\playerInitWeaponsParseStats.gml</script>
+          <script>scripts\playerInitCamera.gml</script>
         </scripts>
         <scripts name="Step">
           <script>scripts\playerStepAnimationAttacking.gml</script>
           <script>scripts\playerStepAnimationNormal.gml</script>
           <script>scripts\playerStepCamera.gml</script>
           <script>scripts\playerStepFootsteps.gml</script>
-          <script>scripts\playerStepInventoryPickups.gml</script>
+          <script>scripts\playerStepInputs.gml</script>
+          <script>scripts\playerStepInteracting.gml</script>
           <script>scripts\playerStepInventoryPickupsAttacking.gml</script>
           <script>scripts\playerStepMeleeCollision.gml</script>
           <script>scripts\playerStepMovement.gml</script>
@@ -304,8 +307,9 @@
     </shaders>
     <shader type="GLSLES">shaders\shdBktGlitch.shader</shader>
     <shader type="GLSLES">shaders\shdBktGlitchMac.shader</shader>
-    <shader type="GLSLES">shaders\shdMotionBlur.shader</shader>
     <shader type="GLSLES">shaders\shdMain.shader</shader>
+    <shader type="GLSLES">shaders\shdFlash.shader</shader>
+    <shader type="GLSLES">shaders\shdSheen.shader</shader>
   </shaders>
   <fonts name="fonts">
     <font>fonts\fontCrit</font>
@@ -359,6 +363,7 @@
       <object>objects\parLight</object>
       <object>objects\parSolid</object>
       <object>objects\parWall</object>
+      <object>objects\parInteractable</object>
     </objects>
     <objects name="World Placement">
       <object>objects\objCrate</object>
@@ -379,7 +384,7 @@
   </rooms>
   <constants number="6">
     <constant name="debugMode">true</constant>
-    <constant name="gameVersion">"Version 0.40."</constant>
+    <constant name="gameVersion">"Version 0.403."</constant>
     <constant name="gameDemoDisclaimer">"This demo was created by Jackson Drummond. Some rights reserved.#Some copyrighted materials used with permission from the copright holders.#Some materials fall under Creative Commons licenses.#This is a very early alpha build of the game and does not represent the final product."</constant>
     <constant name="buildingWidth">2560</constant>
     <constant name="buildingHeight">1280</constant>

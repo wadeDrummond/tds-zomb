@@ -194,8 +194,8 @@ randomPosition = shader_get_uniform(shdMain, "random_pos");
 mbQuality = shader_get_uniform(shdMain, "Quality");
 uPoss = shader_get_uniform(shdMain, "poss");//uniform for x,y
 
-minAmbient = room_speed * 10;
-maxAmbient = room_speed * 30;
+minAmbient = room_speed * 45;
+maxAmbient = room_speed * 120;
 ambientTimer = irandom_range(minAmbient, maxAmbient);
 lastAmbient = choose(ambGuitar1, ambGuitar2);
 </string>
@@ -234,8 +234,6 @@ var largeRadius = lerp(1.5, 2.5, healthScale);
 var noiseStrength = lerp(0.85, 0.1, healthScale);
 var colourMultiplier = lerp(0.2, 1, healthScale);
 
-//var subSurface = surface_create(Width, Height);
-
 global.motionBlurQuality = clamp(global.motionBlurQuality, 1, 254);
 global.motionBlurIntensity = clamp(global.motionBlurIntensity, 0, 2);
 global.motionBlurMax = clamp(global.motionBlurMax, 0, 20);
@@ -249,13 +247,9 @@ if !(keyboard_check(vk_shift) and keyboard_check(vk_control) and debugMode)
         var yDifference = clamp((view_yview - yViewLast) / (view_hview / global.motionBlurIntensity), global.motionBlurMax * -1, global.motionBlurMax);
         
         if (abs(xDifference) &lt; motionBlurThreshold)
-            {
-                xDifference = 0;
-            }
+            xDifference = 0;
         if (abs(yDifference) &lt; motionBlurThreshold)
-            {
-                yDifference = 0;
-            }
+            yDifference = 0;
             
         var xPos = xDifference + 0.5;
         var yPos = yDifference + 0.5;
@@ -266,20 +260,12 @@ if !(keyboard_check(vk_shift) and keyboard_check(vk_control) and debugMode)
         shader_set_uniform_f(uniColour, 128 * colourMultiplier, 128 * colourMultiplier, 128 * colourMultiplier);
         shader_set_uniform_f(randomPosition, random_range(0.35, 0.5));
         shader_set_uniform_f(uPoss, xPos, yPos);
-        shader_set_uniform_f(mbQuality, ceil(global.motionBlurQuality));
         draw_surface_ext(application_surface, 0, 0, xScale, yScale, 0, c_white, 1);
         shader_reset();
     }
 else
     {
         draw_surface_ext(application_surface, 0, 0, xScale, yScale, 0, c_white, 1);
-        draw_set_halign(fa_left);
-        draw_set_valign(fa_top);
-        draw_set_font(fontDebug);
-        draw_set_colour(c_dkgray);
-        draw_text(6, 6, string(round(fps)) + " " + string(round(Frame)));
-        draw_set_colour(c_white);
-        draw_text(4, 4, string(round(fps)) + " " + string(round(Frame)));
     }
     
 Frame += ((delta_time / 1000000) * room_speed);

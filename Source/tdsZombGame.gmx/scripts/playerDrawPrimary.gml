@@ -26,9 +26,4 @@ if ((keyboard_check(vk_control)) and debugMode)
         draw_set_colour(c_green);
         draw_circle(x, y, pickupRadius, false);
         draw_set_alpha(1);
-        
-        if (keyboard_check_pressed(ord("T")))
-            {
-                clAddMessage(string(firstAlpha) + " " + string(secondAlpha));
-            }
     }

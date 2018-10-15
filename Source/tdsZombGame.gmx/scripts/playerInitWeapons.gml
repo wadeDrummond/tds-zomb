@@ -40,6 +40,7 @@ wepStatsAltAnimations[Weapons.Unarmed, 1] = sprPlayerUnarmedAttack3;
 chosenAttackSprite = sprPlayerUnarmedAttack1;
 
 healthDamageMultiplier = 1;
+weaponRangeMultiplier = 1;
 
 playerInitWeaponsParseStats();
 

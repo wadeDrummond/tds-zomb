@@ -1,0 +1,3 @@
+///playerInitCamera();
+
+camMultiplier = 1;

@@ -3,6 +3,21 @@ A small project by Jackson Drummond.
 
 Changelog
 
+Version 0.403 - October 15th, 2018
++ Made framerate + current frame always on GUI. (now referred to as custom overlay)
++ Custom overlay gives more details.
++ Separated inputs into own script.
++ Cleaned up pickup script; now branches to all interact-ables.
++ Added a slight sway to the camera.
++ Wooden planks from a broken crate now go in the general direction of the punch. (varies 45 degrees)
++ Crates now slightly flash when hit.
++ Pickups give off a slight sheen.
++ Added door functionality (temporarily removed collision.)
++ Added Double-Barrel + Knife to weapon pickups.
++ Updated cursor.
++ Improved outline of Firepit sprite.
++ Increased time between ambient noises.
+
 Version 0.40 - October 14th, 2018
 + Added ambient noises. (Guitar as of now)
 + Corrected the way footsteps are counted.
@@ -26,7 +41,7 @@ Version 0.397 - October 13th, 2018
 + Rewrote how player attacking animations are stored.
 + Added alternate animations for Unarmed attacking (elbow, left punch).
 + Shake functions differently.
-+ Seperated 'help' into pages. No argument defaults to page 1.
++ Separated 'help' into pages. No argument defaults to page 1.
 + Added "get_objects" command.
 
 

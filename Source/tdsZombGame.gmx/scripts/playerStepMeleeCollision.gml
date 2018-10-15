@@ -24,6 +24,7 @@ if (imageIndex > weaponMeleeMinFrame[currentWeapon]) and (imageIndex < weaponMel
                                                                 hurtSelf(baseDamage * other.damageMultiplier, (other.statsMap[? Stats.critChance] / 100) * other.weaponCritChance[other.currentWeapon]);
                                                                 
                                                                 ds_list_add(other.meleeHitList, id);
+                                                                attackedDirection = pID.playerAngle;
                                                             }
                                                     }
                                             }

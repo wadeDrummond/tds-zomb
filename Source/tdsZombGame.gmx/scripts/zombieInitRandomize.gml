@@ -1,5 +1,6 @@
 ///zombieInitRandomize();
 
+/*
 if (irandom(giantZombieChance) == 0)
     {
         xScale = random_range(2, 2.5);

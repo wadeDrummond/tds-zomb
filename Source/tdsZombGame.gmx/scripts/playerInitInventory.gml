@@ -24,8 +24,7 @@ for (var i = 0; i < hotbarSlotCount; i ++)
 
 canPickup = false;
 pickupRadius = 96;
-itemPickupTitle = "";
+itemInteract = "";
 itemPickupID = noone;
 itemLerpSpeed = 0.1;
-
-itemPickupLerp = 0;
+itemInteractLerp = 0;

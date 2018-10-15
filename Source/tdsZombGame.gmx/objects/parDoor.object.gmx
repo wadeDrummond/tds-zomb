@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>parSolid</parentName>
+  <parentName>parInteractable</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -27,7 +27,45 @@
             <kind>1</kind>
             <string>///Initialize
 
-Swinging = false;
+Open = false;
+openDirection = 1;
+Name = "ERR";
+
+enum doorType
+    {
+        Horizontal, Vertical
+    }
+
+switch (object_index)
+    {
+        case objWoodenDoorHorizontal:
+            {
+                Orientation = doorType.Horizontal;
+                break;
+            }
+        case objWoodenDoorVertical:
+            {
+                Orientation = doorType.Vertical;
+                break;
+            }
+    }
+
+if (Orientation == doorType.Horizontal)
+    {
+        y += sprite_height;
+        x1Check = x + sprite_width;
+        x2Check = x;
+        y1Check = y - sprite_height / 2;
+        y2Check = y + sprite_height / 2;
+    }   
+else if (Orientation == doorType.Vertical)
+    {
+        x += sprite_width;
+        x1Check = x - sprite_width / 2;
+        x2Check = x + sprite_width / 2;
+        y1Check = y;
+        y2Check = y + sprite_height;
+    }
 </string>
           </argument>
         </arguments>
@@ -52,14 +90,94 @@ Swinging = false;
             <kind>1</kind>
             <string>///Run Variables
 
-if (Swinging)
-    {
-        mask_index = maskNone;
-    }
+image_angle = lerp(image_angle, 90 * Open * openDirection, 0.1);
+mask_index = maskNone;
+
+if Open
+    Name = "CLOSE DOOR";
 else
+    Name = "OPEN DOOR";
+
+exit;
+
+Changing = ((round(image_angle) mod 90) != 0);
+
+if Changing
+    checkIndex = maskNone;
+else
+    checkIndex = sprite_index;
+
+var preAngle = image_angle;
+var collisionCheck = place_meeting(x, y, objPlayer);
+var centerCheck = collision_rectangle(x1Check, y1Check, x2Check, y2Check, objPlayer, true, -1);
+
+mask_index = checkIndex;
+
+if !collisionCheck
     {
-        mask_index = sprite_index;
+        image_angle = lerp(image_angle, 90 * Open * openDirection, 0.1);
+        collisionCheck = place_meeting(x, y, objPlayer);
+        
+        if collisionCheck
+            {
+                image_angle = preAngle;
+                
+                if (Changing)
+                    {
+                        Open = !Open;
+                    }
+            }
     }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Swinging
+
+var changingCheck = (abs(image_angle) &lt;= 5);
+var centerCheck = collision_rectangle(x1Check, y1Check, x2Check, y2Check, objPlayer, true, -1);
+
+//if centerCheck
+//    exit;
+
+if changingCheck
+    {
+        if (Orientation == doorType.Vertical)
+            {
+                if (xInteract - x) &lt; 0
+                    openDirection = 1;
+                else
+                    openDirection = -1;
+            }
+        
+        else if (Orientation == doorType.Horizontal)
+            {
+                if (yInteract - y) &gt; 0
+                    openDirection = 1;
+                else
+                    openDirection = -1;
+            }
+    }
+
+Open = !Open;
 </string>
           </argument>
         </arguments>

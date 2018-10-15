@@ -22,6 +22,7 @@ switch(object_index)
             {
                 soundPlayRandomPitch(sndWoodHit);
                 Scale = 0.85;
+                flashFactor = 1;
                 break;
             }
         case objZombie:

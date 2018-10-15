@@ -1,10 +1,8 @@
 ///playerStepInventoryPickupsAttacking();
 
-canPickup = false;
-itemPickupID = noone;
-itemPickupLerp = lerp(itemPickupLerp, 0, 0.35);
+canInteract = false;
+itemInteractID = noone;
+itemInteractLerp = lerp(itemInteractLerp, 0, 0.35);
 
 with (parInventoryItem)
-    {
-        Selected = false;
-    }
+    Selected = false;

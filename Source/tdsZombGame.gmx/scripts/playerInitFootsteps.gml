@@ -1,7 +1,7 @@
 ///playerInitFootsteps();
 
-footstepCounter = 0;
 footstepThreshold = (sprite_get_number(sprPlayerLegs) - 2) / 2;
+footstepCounter = (footstepThreshold / 2);
 
 footstepIndexes[footstepTypes.Grass, 0] = footstepGrass1;
 footstepIndexes[footstepTypes.Grass, 1] = footstepGrass2;

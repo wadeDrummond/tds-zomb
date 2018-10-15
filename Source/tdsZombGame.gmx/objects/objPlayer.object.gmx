@@ -242,6 +242,21 @@ if !instance_exists(objCommandline)
     {
         playerDrawGUIPrimary();
     }
+    
+var debugString = "Framerate: " + string(round(updateFramerateReal)) + " FPS#Frames: " + string(round(Frame) + "#(Framerate is inaccurate on HTML5 export.)");
+
+if (round(Frame) mod 30) == 0
+    {
+        updateFramerateReal = round(fps_real);
+    }
+
+draw_set_halign(fa_left);
+draw_set_valign(fa_top);
+draw_set_font(fontDebug);
+draw_set_colour(c_dkgray);
+draw_text(6, 6, debugString);
+draw_set_colour(c_white);
+draw_text(4, 4, debugString);
 </string>
           </argument>
         </arguments>

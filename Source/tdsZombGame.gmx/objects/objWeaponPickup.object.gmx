@@ -27,22 +27,33 @@
             <kind>1</kind>
             <string>///Initialize
 
+event_inherited();
+
 Scale = 0.65;
 
 image_speed = 0;
 image_index = irandom(image_number - 1);
 image_xscale = Scale;
 image_yscale = Scale;
+speed = 0;
+direction = 0;
+friction = 0;
 
 circleRadius = (max(sprite_width, sprite_height) * 0.95 * Scale);
 
 weaponsName[0] = "AK-47";
 weaponsName[1] = "GLOCK-17";
+weaponsName[2] = "DOUBLE-BARREL";
+weaponsName[3] = "KNIFE";
 
 weaponScale[0] = 1;
-weaponScale[1] = 0.75;
+weaponScale[1] = 1;
+weaponScale[2] = 1;
+weaponScale[3] = 1;
 
 Name = weaponsName[image_index];
+
+mask_index = maskNone;
 </string>
           </argument>
         </arguments>
@@ -75,7 +86,10 @@ draw_set_colour(c_dkgray);
 draw_circle(x, y, circleRadius * Scale2, false);
 draw_set_colour(c_black);
 draw_circle_width(x, y, circleRadius * Scale2, 8, 48);
+shader_set(shdSheen);
+shader_set_uniform_f(uTime, Time);
 draw_sprite_ext(sprite_index, image_index, x, y, Scale2 * weaponScale[image_index], Scale2 * weaponScale[image_index], Angle, image_blend, image_alpha);
+shader_reset();
 draw_set_alpha(1);
 </string>
           </argument>

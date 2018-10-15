@@ -28,7 +28,6 @@
             <string>///Correct Position
 
 event_inherited();
-x += sprite_width;
 </string>
           </argument>
         </arguments>
