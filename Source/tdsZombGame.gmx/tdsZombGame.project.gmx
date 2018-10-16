@@ -9,6 +9,7 @@
     <extension index="1">extensions\bktGlitch</extension>
     <extension index="2">extensions\Vignette and Noise shader</extension>
     <extension index="3">extensions\TopDownMovement</extension>
+    <extension index="4">extensions\ImageLoadBar</extension>
   </NewExtensions>
   <sounds name="sound">
     <sounds name="Sound Effects">
@@ -410,7 +411,7 @@
   </rooms>
   <constants number="6">
     <constant name="debugMode">true</constant>
-    <constant name="gameVersion">"Version 0.404. Compiled " + date_time_string(GM_build_date) + "."</constant>
+    <constant name="gameVersion">"Version 0.405. Compiled " + date_time_string(GM_build_date) + "."</constant>
     <constant name="gameDemoDisclaimer">"This demo was created by Jackson Drummond. Some rights reserved.#Some copyrighted materials used with permission from the copright holders.#Some materials fall under Creative Commons licenses.#This is a very early alpha build of the game and does not represent the final product."</constant>
     <constant name="buildingWidth">2560</constant>
     <constant name="buildingHeight">1280</constant>

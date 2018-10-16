@@ -76,6 +76,8 @@ debugDoor = false;
 Sound = -1;
 doorNoise[0] = sndDoor1;
 doorNoise[1] = sndDoor2;
+
+shadowDistance = 4;
 </string>
           </argument>
         </arguments>
@@ -202,7 +204,7 @@ if (debugDoor)
     }
 else
     {
-        draw_sprite_ext(sprite_index, image_index, xDraw + 2, xDraw + 2, image_xscale, image_yscale, drawAngle, c_black, image_alpha * 0.5);
+        draw_sprite_ext(sprite_index, image_index, xDraw + shadowDistance, yDraw + shadowDistance, image_xscale, image_yscale, drawAngle, c_black, image_alpha * 0.5);
         draw_sprite_ext(sprite_index, image_index, xDraw, yDraw, image_xscale, image_yscale, drawAngle, image_blend, 1);
     }
 </string>

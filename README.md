@@ -3,6 +3,11 @@ A small project by Jackson Drummond.
 
 Changelog
 
+Version 0.405 - October 15th, 2018
++ Updated ambRadio1.
++ Fixed shadows of doors.
++ Updated HTML5 favicon + loading bar.
+
 Version 0.404 - October 15th, 2018
 + Sorted sprites.
 + Added new ambient noise (Radio1);
@@ -13,6 +18,7 @@ Version 0.404 - October 15th, 2018
 + Reanimated Player: Unarmed Walking + Attack1, all Knife Animations.
 + Added 1 alternate attack for knife.
 + Version now shows compilation time.
++ Low health lowers volume of all sounds besides heartbeats.
 - Pressing Space no longer speeds up time.
 - Removed unused sound files and sound metadata.
 
