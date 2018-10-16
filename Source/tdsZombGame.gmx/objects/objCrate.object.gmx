@@ -86,7 +86,10 @@ if (Health &lt;= 0)
             
         Shake += 64;
             
-        audio_play_sound(sndWoodBreak, 0, false);
+        soundPlayRandomPitch(sndWoodBreak);
+        
+        clAddMessage("Broke crate at (" + string(x) + ", " + string(y) + ".)");
+        
         instance_destroy();
     }
 

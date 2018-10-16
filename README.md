@@ -3,6 +3,19 @@ A small project by Jackson Drummond.
 
 Changelog
 
+Version 0.404 - October 15th, 2018
++ Sorted sprites.
++ Added new ambient noise (Radio1);
++ Increased time between ambient noises.
++ Rewrote how doors work.
++ Added door collision.
++ Added door opening/closing sound effects.
++ Reanimated Player: Unarmed Walking + Attack1, all Knife Animations.
++ Added 1 alternate attack for knife.
++ Version now shows compilation time.
+- Pressing Space no longer speeds up time.
+- Removed unused sound files and sound metadata.
+
 Version 0.403 - October 15th, 2018
 + Made framerate + current frame always on GUI. (now referred to as custom overlay)
 + Custom overlay gives more details.
@@ -131,6 +144,10 @@ https://freesound.org/people/InspectorJ/sounds/336598/
 
 grass footsteps.mp3, DSOADigital
 https://freesound.org/people/DSOADigital/sounds/362250/
+(sliced by me)
+
+Door Squeak, Normal, B.wav, InspectorJ
+https://freesound.org/people/InspectorJ/sounds/342554/
 (sliced by me)
 
 Art Used:

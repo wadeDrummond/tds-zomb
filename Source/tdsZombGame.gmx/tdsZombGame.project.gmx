@@ -11,42 +11,45 @@
     <extension index="3">extensions\TopDownMovement</extension>
   </NewExtensions>
   <sounds name="sound">
-    <sound>sound\ambGuitar1</sound>
-    <sound>sound\ambGuitar2</sound>
-    <sound>sound\footstepConcrete1</sound>
-    <sound>sound\footstepConcrete2</sound>
-    <sound>sound\footstepGrass1</sound>
-    <sound>sound\footstepGrass2</sound>
-    <sound>sound\sndActorHit1</sound>
-    <sound>sound\sndActorHit2</sound>
-    <sound>sound\sndActorHit3</sound>
-    <sound>sound\sndCicada</sound>
-    <sound>sound\sndCritical</sound>
-    <sound>sound\sndFire</sound>
-    <sound>sound\sndHeartbeat</sound>
-    <sound>sound\sndPickup1</sound>
-    <sound>sound\sndPickup2</sound>
-    <sound>sound\sndPickup3</sound>
-    <sound>sound\sndPistolFire</sound>
-    <sound>sound\sndSwish1</sound>
-    <sound>sound\sndSwish2</sound>
-    <sound>sound\sndSwish3</sound>
-    <sound>sound\sndSwishCritical</sound>
-    <sound>sound\sndWind</sound>
-    <sound>sound\sndWoodBreak</sound>
-    <sound>sound\sndWoodHit</sound>
+    <sounds name="Sound Effects">
+      <sounds name="Ambience">
+        <sound>sound\ambGuitar1</sound>
+        <sound>sound\ambGuitar2</sound>
+        <sound>sound\ambRadio1</sound>
+      </sounds>
+      <sounds name="Footsteps">
+        <sound>sound\footstepConcrete1</sound>
+        <sound>sound\footstepConcrete2</sound>
+        <sound>sound\footstepGrass1</sound>
+        <sound>sound\footstepGrass2</sound>
+      </sounds>
+      <sound>sound\sndActorHit1</sound>
+      <sound>sound\sndActorHit2</sound>
+      <sound>sound\sndActorHit3</sound>
+      <sound>sound\sndCicada</sound>
+      <sound>sound\sndCritical</sound>
+      <sound>sound\sndDoor1</sound>
+      <sound>sound\sndDoor2</sound>
+      <sound>sound\sndFire</sound>
+      <sound>sound\sndHeartbeat</sound>
+      <sound>sound\sndPickup1</sound>
+      <sound>sound\sndPickup2</sound>
+      <sound>sound\sndPickup3</sound>
+      <sound>sound\sndPistolFire</sound>
+      <sound>sound\sndSwish1</sound>
+      <sound>sound\sndSwish2</sound>
+      <sound>sound\sndSwish3</sound>
+      <sound>sound\sndSwishCritical</sound>
+      <sound>sound\sndWind</sound>
+      <sound>sound\sndWoodBreak</sound>
+      <sound>sound\sndWoodHit</sound>
+    </sounds>
   </sounds>
   <sprites name="sprites">
-    <sprites name="Buildings">
-      <sprite>sprites\sprCrate</sprite>
-      <sprite>sprites\sprTable</sprite>
-      <sprite>sprites\sprWoodenDoorH</sprite>
-      <sprite>sprites\sprWoodenDoorV</sprite>
-      <sprite>sprites\sprWoodenWallH</sprite>
-      <sprite>sprites\sprWoodenWallV</sprite>
-    </sprites>
     <sprites name="Masks">
       <sprite>sprites\maskActor</sprite>
+      <sprite>sprites\maskDoorH</sprite>
+      <sprite>sprites\maskDoorV</sprite>
       <sprite>sprites\maskNone</sprite>
     </sprites>
     <sprites name="Particles">
@@ -55,35 +58,56 @@
       <sprite>sprites\partLeaves</sprite>
     </sprites>
     <sprites name="Player">
-      <sprite>sprites\sprPlayerKnifeAttack</sprite>
-      <sprite>sprites\sprPlayerKnifeIdle</sprite>
-      <sprite>sprites\sprPlayerKnifeWalk</sprite>
+      <sprites name="Glock">
+        <sprite>sprites\sprPlayerPistolAttack</sprite>
+        <sprite>sprites\sprPlayerPistolIdle</sprite>
+        <sprite>sprites\sprPlayerPistolWalk</sprite>
+      </sprites>
+      <sprites name="Knife">
+        <sprite>sprites\sprPlayerKnifeAttack1</sprite>
+        <sprite>sprites\sprPlayerKnifeAttack2</sprite>
+        <sprite>sprites\sprPlayerKnifeIdle</sprite>
+        <sprite>sprites\sprPlayerKnifeWalk</sprite>
+      </sprites>
       <sprite>sprites\sprPlayerLegs</sprite>
-      <sprite>sprites\sprPlayerPistolAttack</sprite>
-      <sprite>sprites\sprPlayerPistolIdle</sprite>
-      <sprite>sprites\sprPlayerPistolWalk</sprite>
-      <sprite>sprites\sprPlayerUnarmedAttack1</sprite>
-      <sprite>sprites\sprPlayerUnarmedAttack2</sprite>
-      <sprite>sprites\sprPlayerUnarmedAttack3</sprite>
-      <sprite>sprites\sprPlayerUnarmedIdle</sprite>
-      <sprite>sprites\sprPlayerUnarmedWalk</sprite>
+      <sprites name="Unarmed">
+        <sprite>sprites\sprPlayerUnarmedAttack1</sprite>
+        <sprite>sprites\sprPlayerUnarmedAttack2</sprite>
+        <sprite>sprites\sprPlayerUnarmedAttack3</sprite>
+        <sprite>sprites\sprPlayerUnarmedIdle</sprite>
+        <sprite>sprites\sprPlayerUnarmedWalk</sprite>
+      </sprites>
     </sprites>
-    <sprite>sprites\sprCorner</sprite>
-    <sprite>sprites\sprCrosshair</sprite>
-    <sprite>sprites\sprCrosshair2</sprite>
-    <sprite>sprites\sprFirepit</sprite>
-    <sprite>sprites\sprNoTile</sprite>
-    <sprite>sprites\sprResourceIcons</sprite>
-    <sprite>sprites\sprSmears</sprite>
-    <sprite>sprites\sprTitle</sprite>
-    <sprite>sprites\sprTree</sprite>
-    <sprite>sprites\sprWeapons</sprite>
-    <sprite>sprites\sprWoodenPlanks</sprite>
+    <sprites name="Resources">
+      <sprite>sprites\sprWeapons</sprite>
+      <sprite>sprites\sprWoodenPlanks</sprite>
+    </sprites>
+    <sprites name="UI">
+      <sprite>sprites\sprCrosshair</sprite>
+      <sprite>sprites\sprCrosshair2</sprite>
+      <sprite>sprites\sprResourceIcons</sprite>
+      <sprite>sprites\sprTitle</sprite>
+    </sprites>
+    <sprites name="World Placement">
+      <sprite>sprites\sprCorner</sprite>
+      <sprite>sprites\sprCrate</sprite>
+      <sprite>sprites\sprFirepit</sprite>
+      <sprite>sprites\sprSmears</sprite>
+      <sprite>sprites\sprTable</sprite>
+      <sprite>sprites\sprTree</sprite>
+      <sprite>sprites\sprWoodenDoorH</sprite>
+      <sprite>sprites\sprWoodenDoorV</sprite>
+      <sprite>sprites\sprWoodenWallH</sprite>
+      <sprite>sprites\sprWoodenWallV</sprite>
+    </sprites>
     <sprites name="Zombie">
       <sprite>sprites\sprZombieLegs</sprite>
       <sprite>sprites\sprZombieWalk</sprite>
     </sprites>
-    <sprite>sprites\zoneFootstepsSprite</sprite>
+    <sprites name="Zones">
+      <sprite>sprites\zoneFootstepsSprite</sprite>
+      <sprite>sprites\zoneNoTile</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bckConcrete</background>
@@ -188,11 +212,11 @@
         </scripts>
       </scripts>
       <script>scripts\gameAddBuildingTypes.gml</script>
+      <script>scripts\gameGetObjectNames.gml</script>
+      <script>scripts\gameGetResourceCounts.gml</script>
       <script>scripts\gameInit.gml</script>
       <script>scripts\gameInitGenerateWorld.gml</script>
       <script>scripts\gameInitParticles.gml</script>
-      <script>scripts\gameGetResourceCounts.gml</script>
-      <script>scripts\gameGetObjectNames.gml</script>
     </scripts>
     <scripts name="Light Engine">
       <script>scripts\timeInit.gml</script>
@@ -279,8 +303,8 @@
       </scripts>
     </scripts>
     <scripts name="Sounds">
-      <script>scripts\soundPlayRandomPitch.gml</script>
       <script>scripts\gunshotPlay.gml</script>
+      <script>scripts\soundPlayRandomPitch.gml</script>
     </scripts>
     <scripts name="World Generation">
       <scripts name="Trees">
@@ -330,6 +354,7 @@
     <objects name="Controllers">
       <object>objects\objBuildingExport</object>
       <object>objects\objGame</object>
+      <object>objects\objInit</object>
       <object>objects\objLevelEditor</object>
       <object>objects\objMenu</object>
     </objects>
@@ -354,16 +379,15 @@
       <object>objects\objCorner</object>
       <object>objects\objTile</object>
     </objects>
-    <object>objects\objInit</object>
     <objects name="Parents">
       <object>objects\parActor</object>
       <object>objects\parDoor</object>
       <object>objects\parFurniture</object>
+      <object>objects\parInteractable</object>
       <object>objects\parInventoryItem</object>
       <object>objects\parLight</object>
       <object>objects\parSolid</object>
       <object>objects\parWall</object>
-      <object>objects\parInteractable</object>
     </objects>
     <objects name="World Placement">
       <object>objects\objCrate</object>
@@ -374,7 +398,9 @@
       <object>objects\objWoodenWallHorizontal</object>
       <object>objects\objWoodenWallVertical</object>
     </objects>
-    <object>objects\zoneFootsteps</object>
+    <objects name="Zones">
+      <object>objects\zoneFootsteps</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\roomInit</room>
@@ -384,7 +410,7 @@
   </rooms>
   <constants number="6">
     <constant name="debugMode">true</constant>
-    <constant name="gameVersion">"Version 0.403."</constant>
+    <constant name="gameVersion">"Version 0.404. Compiled " + date_time_string(GM_build_date) + "."</constant>
     <constant name="gameDemoDisclaimer">"This demo was created by Jackson Drummond. Some rights reserved.#Some copyrighted materials used with permission from the copright holders.#Some materials fall under Creative Commons licenses.#This is a very early alpha build of the game and does not represent the final product."</constant>
     <constant name="buildingWidth">2560</constant>
     <constant name="buildingHeight">1280</constant>

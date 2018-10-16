@@ -27,15 +27,16 @@ weaponMeleeMinFrame[Weapons.Weapon] = (real) - Sprite stuff.
 weaponMeleeMaxFrame[Weapons.Weapon] = (real) - Sprite stuff.
 */
 wepStats[Weapons.Unarmed] = "sprPlayerUnarmedIdle|sprPlayerUnarmedWalk|sprPlayerUnarmedAttack1|Melee|0.5|4|96|1.15|65|4|22|32";
-wepStats[Weapons.Knife] = "sprPlayerKnifeIdle|sprPlayerKnifeWalk|sprPlayerKnifeAttack|Melee|0.35|8|128|1|45|6|6|10";
+wepStats[Weapons.Knife] = "sprPlayerKnifeIdle|sprPlayerKnifeWalk|sprPlayerKnifeAttack1|Melee|0.45|8|90|1|45|6|6|10";
 wepStats[Weapons.Pistol] = "sprPlayerPistolIdle|sprPlayerPistolWalk|sprPlayerPistolAttack|Gun|0.2|4|0|0.915|65|4|0|0";
 
 wepStatsAltCount[Weapons.Unarmed] = 2;
-wepStatsAltCount[Weapons.Knife] = 0;
+wepStatsAltCount[Weapons.Knife] = 1;
 wepStatsAltCount[Weapons.Pistol] = 0;
 
 wepStatsAltAnimations[Weapons.Unarmed, 0] = sprPlayerUnarmedAttack2;
 wepStatsAltAnimations[Weapons.Unarmed, 1] = sprPlayerUnarmedAttack3;
+wepStatsAltAnimations[Weapons.Knife, 0] = sprPlayerKnifeAttack2;
 
 chosenAttackSprite = sprPlayerUnarmedAttack1;
 

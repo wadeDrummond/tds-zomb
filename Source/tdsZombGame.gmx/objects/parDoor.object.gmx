@@ -28,6 +28,8 @@
             <string>///Initialize
 
 Open = false;
+drawAngle = 0;
+collisionAngle = 0;
 openDirection = 1;
 Name = "ERR";
 
@@ -41,31 +43,39 @@ switch (object_index)
         case objWoodenDoorHorizontal:
             {
                 Orientation = doorType.Horizontal;
+                standardMask = maskDoorH;
                 break;
             }
         case objWoodenDoorVertical:
             {
                 Orientation = doorType.Vertical;
+                standardMask = maskDoorV;
                 break;
             }
     }
 
 if (Orientation == doorType.Horizontal)
-    {
-        y += sprite_height;
-        x1Check = x + sprite_width;
-        x2Check = x;
-        y1Check = y - sprite_height / 2;
-        y2Check = y + sprite_height / 2;
-    }   
+    y += sprite_height div 1;  
 else if (Orientation == doorType.Vertical)
-    {
-        x += sprite_width;
-        x1Check = x - sprite_width / 2;
-        x2Check = x + sprite_width / 2;
-        y1Check = y;
-        y2Check = y + sprite_height;
-    }
+    x += sprite_width div 1;
+    
+xstart = x;
+ystart = y;
+xDraw = x;
+yDraw = y;
+openOffset = 8;
+    
+mask_index = standardMask;
+    
+x1Check = bbox_left;
+y1Check = bbox_top;
+x2Check = bbox_right;
+y2Check = bbox_bottom;
+    
+debugDoor = false;
+Sound = -1;
+doorNoise[0] = sndDoor1;
+doorNoise[1] = sndDoor2;
 </string>
           </argument>
         </arguments>
@@ -90,44 +100,16 @@ else if (Orientation == doorType.Vertical)
             <kind>1</kind>
             <string>///Run Variables
 
-image_angle = lerp(image_angle, 90 * Open * openDirection, 0.1);
-mask_index = maskNone;
+collisionAngle = 90 * Open * openDirection;
+mask_index = standardMask;
 
 if Open
     Name = "CLOSE DOOR";
 else
     Name = "OPEN DOOR";
 
-exit;
-
-Changing = ((round(image_angle) mod 90) != 0);
-
-if Changing
-    checkIndex = maskNone;
-else
-    checkIndex = sprite_index;
-
-var preAngle = image_angle;
-var collisionCheck = place_meeting(x, y, objPlayer);
-var centerCheck = collision_rectangle(x1Check, y1Check, x2Check, y2Check, objPlayer, true, -1);
-
-mask_index = checkIndex;
-
-if !collisionCheck
-    {
-        image_angle = lerp(image_angle, 90 * Open * openDirection, 0.1);
-        collisionCheck = place_meeting(x, y, objPlayer);
-        
-        if collisionCheck
-            {
-                image_angle = preAngle;
-                
-                if (Changing)
-                    {
-                        Open = !Open;
-                    }
-            }
-    }
+image_angle = collisionAngle;
+drawAngle = lerp(drawAngle, collisionAngle, 0.15);
 </string>
           </argument>
         </arguments>
@@ -152,16 +134,14 @@ if !collisionCheck
             <kind>1</kind>
             <string>///Swinging
 
-var changingCheck = (abs(image_angle) &lt;= 5);
-var centerCheck = collision_rectangle(x1Check, y1Check, x2Check, y2Check, objPlayer, true, -1);
+var centerCheck = collision_rectangle(x1Check, y1Check, x2Check, y2Check, parActor, false, -1);
 
-//if centerCheck
-//    exit;
-
-if changingCheck
+if !centerCheck
     {
         if (Orientation == doorType.Vertical)
             {
+                y = ystart - (openOffset * (!Open));
+            
                 if (xInteract - x) &lt; 0
                     openDirection = 1;
                 else
@@ -170,14 +150,61 @@ if changingCheck
         
         else if (Orientation == doorType.Horizontal)
             {
+                x = xstart - (openOffset * (!Open));
+            
                 if (yInteract - y) &gt; 0
                     openDirection = 1;
                 else
                     openDirection = -1;
             }
+        
+        if Sound != -1
+            audio_stop_sound(Sound);
+    
+        Sound = soundPlayRandomPitch(doorNoise[Open], 1, 1);
+        
+        Open = !Open;
     }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draw Self, Shadow
 
-Open = !Open;
+if (debugDoor)
+    {
+        draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, collisionAngle, c_red, image_alpha * 0.5);
+        draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, drawAngle, c_yellow, 0.85);
+        
+        draw_set_alpha(0.5);
+        draw_set_colour(c_blue);
+        draw_rectangle_width(bbox_left, bbox_top, bbox_right, bbox_bottom, 2);
+        draw_set_colour(c_green);
+        draw_rectangle_width(x1Check, y1Check, x2Check, y2Check, sin_move(2, 4, 0.5, 0));
+    }
+else
+    {
+        draw_sprite_ext(sprite_index, image_index, xDraw + 2, xDraw + 2, image_xscale, image_yscale, drawAngle, c_black, image_alpha * 0.5);
+        draw_sprite_ext(sprite_index, image_index, xDraw, yDraw, image_xscale, image_yscale, drawAngle, image_blend, 1);
+    }
 </string>
           </argument>
         </arguments>

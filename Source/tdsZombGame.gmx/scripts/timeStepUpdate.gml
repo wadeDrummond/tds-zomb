@@ -1,17 +1,5 @@
 ///timeStepUpdate();
 
-if (debugMode)
-    {
-        if (keyboard_check(vk_space))
-            {
-                timeScale = (defaultTimeScale / 50);
-            }
-        else
-            {
-                timeScale = defaultTimeScale;
-            }
-    }
-
 Speed = (1 / (room_speed * timeScale));
 
 if (Minutes >= 60)
@@ -20,14 +8,10 @@ if (Minutes >= 60)
         Hours += 1;
     }
 else
-    {
-        Minutes += Speed;
-    }
+    Minutes += Speed;
     
 if (Hours > 24)
-    {
-        Hours = 1;
-    }
+    Hours = 1;
 
 Time = (((60 * (Hours - 1)) + Minutes) / 60) / 24;
 
@@ -64,14 +48,10 @@ else
 
 
 if (Minutes >= 10)
-    {
-        minuteDraw = string(floor(Minutes));
-    }
+    minuteDraw = string(floor(Minutes));
 
 else
-    {
-        minuteDraw = "0" + string(floor(Minutes));
-    }
+    minuteDraw = "0" + string(floor(Minutes));
 
 timeString = hourDraw + ":" + minuteDraw + " " + Mirid;
     

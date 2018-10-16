@@ -105,10 +105,10 @@ if !ambientIsPlaying()
     {
         if (ambientTimer &lt;= 0)
             {
-                var checkAmbient = choose(ambGuitar1, ambGuitar2);
+                var checkAmbient = ambientNoises[irandom(ambientCount - 1)];
                 
                 while (checkAmbient == lastAmbient)
-                    var checkAmbient = choose(ambGuitar1, ambGuitar2);
+                    var checkAmbient = ambientNoises[irandom(ambientCount - 1)];
                     
                 lastAmbient = checkAmbient;
                 audio_play_sound(lastAmbient, 1, false);
@@ -194,10 +194,15 @@ randomPosition = shader_get_uniform(shdMain, "random_pos");
 mbQuality = shader_get_uniform(shdMain, "Quality");
 uPoss = shader_get_uniform(shdMain, "poss");//uniform for x,y
 
-minAmbient = room_speed * 45;
-maxAmbient = room_speed * 120;
+ambientNoises[0] = ambGuitar1;
+ambientNoises[1] = ambGuitar2;
+ambientNoises[2] = ambRadio1;
+ambientCount = array_length_1d(ambientNoises);
+
+minAmbient = room_speed * 85;
+maxAmbient = room_speed * 240;
 ambientTimer = irandom_range(minAmbient, maxAmbient);
-lastAmbient = choose(ambGuitar1, ambGuitar2);
+lastAmbient = ambientNoises[irandom(ambientCount - 1)];
 </string>
           </argument>
         </arguments>

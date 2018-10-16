@@ -1,7 +1,7 @@
 ///gameInitGenerateWorld();
 
-room_width = roomWidth;
-room_height = roomHeight;
+roomWidth = room_width;
+roomHeight = room_height;
 
 var buildingGridWidth = roomWidth / buildingWidth;
 var buildingGridHeight = roomHeight / buildingHeight;

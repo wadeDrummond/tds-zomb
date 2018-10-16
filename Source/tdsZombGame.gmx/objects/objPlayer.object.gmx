@@ -239,16 +239,12 @@ playerStepPrimary();
             <string>///Draw GUI
 
 if !instance_exists(objCommandline)
-    {
-        playerDrawGUIPrimary();
-    }
-    
-var debugString = "Framerate: " + string(round(updateFramerateReal)) + " FPS#Frames: " + string(round(Frame) + "#(Framerate is inaccurate on HTML5 export.)");
+    playerDrawGUIPrimary();
 
+    
+var debugString = "Framerate: " + string(round(updateFramerateReal)) + " FPS#Frames: " + string(round(Frame)) + "#(Framerate is inaccurate on HTML5 export.)";
 if (round(Frame) mod 30) == 0
-    {
-        updateFramerateReal = round(fps_real);
-    }
+    updateFramerateReal = round(fps_real);
 
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);
