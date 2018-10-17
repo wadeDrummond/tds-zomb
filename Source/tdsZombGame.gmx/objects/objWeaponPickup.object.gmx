@@ -29,29 +29,86 @@
 
 event_inherited();
 
-Scale = 0.65;
+saturationFactor = 0.45;
+uFlashAmount = shader_get_uniform(shdFlash, "flashAmount");
+
+drawScale = 0.2;
+baseScale = 0.75;
+maxScale = 0.95;
+targetScale = 1.0;
 
 image_speed = 0;
 image_index = irandom(image_number - 1);
-image_xscale = Scale;
-image_yscale = Scale;
+image_xscale = baseScale;
+image_yscale = baseScale;
 speed = 0;
 direction = 0;
 friction = 0;
 
-circleRadius = (max(sprite_width, sprite_height) * 0.95 * Scale);
+enum wepCategory
+    {
+        Blunt, Sharp, Pistol, Rifle, SMG, Shotgun
+    }
+    
+wepQuality[wepCategory.Blunt, 0] = "SOFT";
+wepQuality[wepCategory.Blunt, 1] = "LIGHT";
+wepQuality[wepCategory.Blunt, 2] = "STANDARD";
+wepQuality[wepCategory.Blunt, 3] = "STURDY";
+wepQuality[wepCategory.Blunt, 4] = "HEAVY";
+wepQuality[wepCategory.Sharp, 0] = "EDGELESS";
+wepQuality[wepCategory.Sharp, 1] = "DULL";
+wepQuality[wepCategory.Sharp, 2] = "STANDARD";
+wepQuality[wepCategory.Sharp, 3] = "POINTY";
+wepQuality[wepCategory.Sharp, 4] = "JAGGED";
+wepQuality[wepCategory.Pistol, 0] = "KNOCKOFF";
+wepQuality[wepCategory.Pistol, 1] = "RUSTY";
+wepQuality[wepCategory.Pistol, 2] = "WELL-USED";
+wepQuality[wepCategory.Pistol, 3] = "STANDARD";
+wepQuality[wepCategory.Pistol, 4] = "PRECISE";
+wepQuality[wepCategory.Rifle, 0] = "KNOCKOFF";
+wepQuality[wepCategory.Rifle, 1] = "RUSTY";
+wepQuality[wepCategory.Rifle, 2] = "STANDARD";
+wepQuality[wepCategory.Rifle, 3] = "PRECISE";
+wepQuality[wepCategory.Rifle, 4] = "MARKSMAN";
+wepQuality[wepCategory.SMG, 0] = "KNOCKOFF";
+wepQuality[wepCategory.SMG, 1] = "RUSTY";
+wepQuality[wepCategory.SMG, 2] = "STANDARD";
+wepQuality[wepCategory.SMG, 3] = "QUICK";
+wepQuality[wepCategory.SMG, 4] = "FAST";
+wepQuality[wepCategory.Shotgun, 0] = "KNOCKOFF";
+wepQuality[wepCategory.Shotgun, 1] = "RUSTY";
+wepQuality[wepCategory.Shotgun, 2] = "STANDARD";
+wepQuality[wepCategory.Shotgun, 3] = "FORCEFUL";
+wepQuality[wepCategory.Shotgun, 4] = "IMPACTFUL";
+
+qualityColour[0] = $4b6ca0;
+qualityColour[1] = c_orange;
+qualityColour[2] = c_gray;
+qualityColour[3] = c_green;
+qualityColour[4] = c_yellow;
+
+for (var i = 0; i &lt; (array_length_1d(qualityColour) - 1); i ++)
+    qualityColour[i] = make_colour_hsv(colour_get_hue(qualityColour[i]), colour_get_saturation(qualityColour[i]) * saturationFactor, colour_get_value(qualityColour[i]));
+
+circleRadius = (max(sprite_width, sprite_height) * 0.5);
 
 weaponsName[0] = "AK-47";
 weaponsName[1] = "GLOCK-17";
 weaponsName[2] = "DOUBLE-BARREL";
 weaponsName[3] = "KNIFE";
-
+wepCategoryIndex[0] = wepCategory.Rifle;
+wepCategoryIndex[1] = wepCategory.Pistol;
+wepCategoryIndex[2] = wepCategory.Shotgun;
+wepCategoryIndex[3] = wepCategory.Sharp;
 weaponScale[0] = 1;
 weaponScale[1] = 1;
 weaponScale[2] = 1;
 weaponScale[3] = 1;
 
-Name = weaponsName[image_index];
+Quality = irandom(4);
+
+Name = wepQuality[wepCategoryIndex[image_index], Quality] + " " + weaponsName[image_index];
+baseColour = qualityColour[Quality];
 
 mask_index = maskNone;
 </string>
@@ -79,17 +136,31 @@ mask_index = maskNone;
             <string>///Draw
 
 var Scale2 = sin_move(1.0, 1.05, 12, 0);
-var Angle = sin_move(-1, 1, 8, 0);
+var Angle = sin_move(-3, 3, 8, 0);
+var flashAmount = clamp(sin_move(-1, 0.5, 6, 0), 0, 1);
 
-draw_set_alpha(0.25);
-draw_set_colour(c_dkgray);
-draw_circle(x, y, circleRadius * Scale2, false);
-draw_set_colour(c_black);
-draw_circle_width(x, y, circleRadius * Scale2, 8, 48);
-shader_set(shdSheen);
-shader_set_uniform_f(uTime, Time);
-draw_sprite_ext(sprite_index, image_index, x, y, Scale2 * weaponScale[image_index], Scale2 * weaponScale[image_index], Angle, image_blend, image_alpha);
+if Selected
+    targetScale = Scale2 * maxScale;
+else
+    targetScale = Scale2 * baseScale;
+    
+drawScale = lerp(drawScale, targetScale, 0.1);
+
+var innerCircleColour = merge_colour(baseColour, c_white, 0);
+var outerCircleColour = merge_colour(baseColour, c_black, 0.35);
+
+draw_set_alpha(0.35);
+draw_set_colour(innerCircleColour);
+draw_circle(x, y, circleRadius * drawScale, false);
+draw_set_colour(outerCircleColour);
+draw_set_alpha(0.5);
+draw_circle_width(x, y, circleRadius * drawScale, 8, 64);
+
+shader_set(shdFlash);
+shader_set_uniform_f(uFlashAmount, flashAmount);
+draw_sprite_ext(sprite_index, image_index, x, y, drawScale * weaponScale[image_index], drawScale * weaponScale[image_index], Angle, image_blend, image_alpha);
 shader_reset();
+
 draw_set_alpha(1);
 </string>
           </argument>

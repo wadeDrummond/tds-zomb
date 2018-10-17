@@ -154,13 +154,22 @@ for(var i = 0; i < commandAmount; i ++)
                                 clGetObjects();
                                 break;
                             }
+                        case "spawn_weapon":
+                            {
+                                clCreateInstance(string(mouse_x), string(mouse_y), "objWeaponPickup", 1);
+                                break;
+                            }
+                        case "reroll_weapons":
+                            {
+                                with (objWeaponPickup)
+                                    event_perform(ev_create, 0);
+                                break;
+                            }
                     }
 
                 break;
             }
             
         else if (i >= (commandAmount - 1))
-            {
-                clAddMessage("Invalid syntax.", c_red);
-            }
+            clAddMessage("Invalid syntax.", c_red);
     }

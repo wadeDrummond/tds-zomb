@@ -109,6 +109,8 @@
       <sprite>sprites\zoneFootstepsSprite</sprite>
       <sprite>sprites\zoneNoTile</sprite>
     </sprites>
+    <sprite>sprites\sprBurning</sprite>
+    <sprite>sprites\sprExplosion</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bckConcrete</background>
@@ -227,6 +229,7 @@
       <script>scripts\drawHealthbar.gml</script>
       <script>scripts\hurtSelf.gml</script>
       <script>scripts\ambientIsPlaying.gml</script>
+      <script>scripts\shaderSetBurning.gml</script>
     </scripts>
     <scripts name="Movement">
       <script>scripts\animation_end.gml</script>

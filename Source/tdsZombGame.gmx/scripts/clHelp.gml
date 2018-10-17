@@ -58,6 +58,12 @@ switch (real(argument0))
                 clAddBlank();
                 clAddMessage("get_objects", baseColour);
                 clAddMessage("Lists all objects in the game.", subColour);
+                clAddBlank();
+                clAddMessage("spawn_weapon", baseColour);
+                clAddMessage("Spawns a weapon at the mouse coordinates.", subColour);
+                clAddBlank();
+                clAddMessage("reroll_weapons", baseColour);
+                clAddMessage("Reinitializes all weapon drops to have new subimages/qualities.", subColour);
                 clAddMessage("Showing page (2/2) of 'help'.", c_yellow)
                 break;
             }
