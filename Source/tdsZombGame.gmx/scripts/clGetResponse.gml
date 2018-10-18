@@ -163,8 +163,24 @@ for(var i = 0; i < commandAmount; i ++)
                             {
                                 with (objWeaponPickup)
                                     event_perform(ev_create, 0);
+                                clAddMessage("Reinitialized all weapon pickups.", c_green);
                                 break;
                             }
+                        case "window_size":
+                            {
+                                window_set_size(real(Argument[1]), real(Argument[2]));
+                                clAddMessage("Attempted to resize window to (" + string(Argument[1]) + "x" + string(Argument[2]) + ").", c_green);
+                                break;
+                            }
+                        case "ben_walker":
+                            {
+                                explosionMode = !explosionMode;
+                                if (explosionMode)
+                                    clAddMessage("GO CRAZY! RIGHT MOUSE BUTTON TO SPAWN EXPLOSIONS!", -120);
+                                else
+                                    clAddMessage("Ben Walker mode off.", c_red);
+                            }
+                                
                     }
 
                 break;

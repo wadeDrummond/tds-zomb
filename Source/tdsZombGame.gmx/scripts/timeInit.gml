@@ -12,7 +12,7 @@ var Brightness = lerp(0.05, 1, Time);
 pl_option_set_ambience(ambientColour, 0.25);
 
 Minutes = 30;
-Hours = 5;
+Hours = 24;
 
 global.timeHours = Hours;
 global.timeMinutes = Minutes;

@@ -15,16 +15,12 @@ application_surface_draw_enable(false);
 display_set_gui_size(surface_get_width(application_surface), surface_get_height(application_surface));
 
 //Randomly Add Details
-repeat(irandom(3))
-    {
-        instance_create(irandom(room_width), irandom(room_height), objSmear);
-    }
+repeat(irandom(20))
+    instance_create(irandom(room_width), irandom(room_height), objSmear);
 
 //Create Debug Object
 if (debugMode)
-    {
-        instance_create(0, 0, objDebug);
-    }
+    instance_create(0, 0, objDebug);
 
 //Set Cursor
 window_set_cursor(cr_none);

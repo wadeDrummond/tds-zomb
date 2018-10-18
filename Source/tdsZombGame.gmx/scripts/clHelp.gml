@@ -64,6 +64,12 @@ switch (real(argument0))
                 clAddBlank();
                 clAddMessage("reroll_weapons", baseColour);
                 clAddMessage("Reinitializes all weapon drops to have new subimages/qualities.", subColour);
+                clAddBlank();
+                clAddMessage("window_size (width) (height)", baseColour);
+                clAddMessage("Sets window size. Not applicable on HTML5.", subColour);
+                clAddBlank();
+                clAddMessage("ben_walker", baseColour);
+                clAddMessage("Toggle Ben Walker mode.", subColour);
                 clAddMessage("Showing page (2/2) of 'help'.", c_yellow)
                 break;
             }

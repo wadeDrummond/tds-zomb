@@ -32,6 +32,9 @@ audio_group_load(agSounds);
 
 canContinue = false;
 alarm[0] = room_speed * 0.5;
+
+globalvar Shake;
+Shake = 0;
 </string>
           </argument>
         </arguments>

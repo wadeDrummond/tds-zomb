@@ -55,6 +55,8 @@ Command[12] = "shake";
 Command[13] = "get_objects";
 Command[14] = "spawn_weapon";
 Command[15] = "reroll_weapons";
+Command[16] = "window_size";
+Command[17] = "ben_walker";
 
 commandArgumentMin[0] = 3;
 commandArgumentMin[1] = 0;
@@ -72,6 +74,8 @@ commandArgumentMin[12] = 1;
 commandArgumentMin[13] = 0;
 commandArgumentMin[14] = 0;
 commandArgumentMin[15] = 0;
+commandArgumentMin[16] = 2;
+commandArgumentMin[17] = 0;
 
 hitEnter = false;
 </string>
@@ -235,6 +239,15 @@ for (var i = (Size - 1); i &gt;= 0; i --)
         var Colour = colourList[| i];
         var Shadow = merge_colour(Colour, c_black, 0.65);
         var _xAdd = 0;
+        
+        if (Colour == -120)
+            {
+                var _Mix = sin_move(0, 1, 0.35, 0);
+                Colour = merge_colour(c_red, c_maroon, _Mix);
+                var Shadow = merge_colour(Colour, c_black, 0.65);
+                
+                var _xAdd = sin_move(0, 6, 1, 0);
+            }
         
         if (Colour == -135)
             {

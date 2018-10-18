@@ -25,7 +25,7 @@ uniform vec3 u_vignette_colour; //R,G,B
 uniform vec2 random_pos;
 
 //Used for Motion Blur
-const float mbQuality = 10.0;
+const float mbQuality = 8.0;
 uniform vec2 poss;//x,y
 
 float random(vec3 _scale, float _seed)

@@ -171,6 +171,10 @@ BktGlitch_init();
 gameInit();
 gameInitParticles();
 
+globalvar explosionMode;
+
+explosionMode = false;
+
 event_user(0);
 
 lastBrowserWidth = browser_width;

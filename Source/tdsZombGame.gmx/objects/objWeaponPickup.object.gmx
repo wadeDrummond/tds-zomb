@@ -105,7 +105,16 @@ weaponScale[1] = 1;
 weaponScale[2] = 1;
 weaponScale[3] = 1;
 
-Quality = irandom(4);
+var randomCheck = irandom(19);
+
+if (randomCheck &lt;= 10)
+    Quality = 2;
+else if (randomCheck &lt;= 15)
+    Quality = choose(1, 3)
+else if (randomCheck &lt;= 18)
+    Quality = 0;
+else
+    Quality = 4;
 
 Name = wepQuality[wepCategoryIndex[image_index], Quality] + " " + weaponsName[image_index];
 baseColour = qualityColour[Quality];

@@ -14,4 +14,4 @@ Interact = keyboard_check_pressed(ord("F"));
 lookFar = keyboard_check(vk_shift);
 
 Shoot = (mouse_check_button(mb_left) or gamepad_button_check(0, gp_shoulderrb));
-altShoot = (mouse_check_button(mb_right) or gamepad_button_check(0, gp_shoulderlb));
+altShoot = (mouse_check_button_pressed(mb_right) or gamepad_button_check(0, gp_shoulderlb));

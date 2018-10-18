@@ -3,6 +3,13 @@ A small project by Jackson Drummond.
 
 Changelog
 
+Version 0.406 - October 17th, 2018
++ Added explosion object. Does not appear in standard gameplay as of yet.
++ Made debug outlines blink.
++ Added "window_size" command. (Only applicable on Windows);
++ Added Ben Walker mode. Credit to Gabe Bellew.
++ Temporary: Changed starting time of day.
+
 Version 0.405 - October 15th, 2018
 + Updated ambRadio1.
 + Fixed shadows of doors.

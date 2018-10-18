@@ -31,6 +31,7 @@
       <sound>sound\sndCritical</sound>
       <sound>sound\sndDoor1</sound>
       <sound>sound\sndDoor2</sound>
+      <sound>sound\sndExplosion</sound>
       <sound>sound\sndFire</sound>
       <sound>sound\sndHeartbeat</sound>
       <sound>sound\sndPickup1</sound>
@@ -110,7 +111,12 @@
       <sprite>sprites\zoneNoTile</sprite>
     </sprites>
     <sprite>sprites\sprBurning</sprite>
-    <sprite>sprites\sprExplosion</sprite>
+    <sprites name="Effects">
+      <sprite>sprites\effExplosion1</sprite>
+      <sprite>sprites\effExplosion2</sprite>
+      <sprite>sprites\effExplosion3</sprite>
+      <sprite>sprites\effExplosion4</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bckConcrete</background>
@@ -372,6 +378,8 @@
     </objects>
     <objects name="Effects">
       <object>objects\objDamageText</object>
+      <object>objects\objExplosion</object>
+      <object>objects\objFlash</object>
       <object>objects\objLightEngine</object>
       <object>objects\objSunDirection</object>
     </objects>
@@ -414,7 +422,7 @@
   </rooms>
   <constants number="6">
     <constant name="debugMode">true</constant>
-    <constant name="gameVersion">"Version 0.405. Compiled " + date_time_string(GM_build_date) + "."</constant>
+    <constant name="gameVersion">"Version 0.406. Compiled " + date_time_string(GM_build_date) + "."</constant>
     <constant name="gameDemoDisclaimer">"This demo was created by Jackson Drummond. Some rights reserved.#Some copyrighted materials used with permission from the copright holders.#Some materials fall under Creative Commons licenses.#This is a very early alpha build of the game and does not represent the final product."</constant>
     <constant name="buildingWidth">2560</constant>
     <constant name="buildingHeight">1280</constant>
