@@ -5,6 +5,9 @@ Changelog
 
 Version 0.407 - October 18th, 2018
 + Rewrote resource counter entirely.
++ Gave crates more health.
++ Linear interpolation speed of Crate health bar is now faster.
++ (Hidden)
 
 Version 0.406 - October 17th, 2018
 + Added explosion object. Does not appear in standard gameplay as of yet.
