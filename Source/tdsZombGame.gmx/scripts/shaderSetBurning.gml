@@ -1,22 +1,24 @@
-///shaderSetBurning(spriteIndex, imageIndex, burningSprite, burningImage)
-var _spriteIndex = argument0; // Sprite index for the bloodsplat
-var _imageIndex = argument1; // Image index
-var _burningSprite = argument0; // Sprite index for the bloodsplat
-var _burningImage = argument1; // Image index
+/// set_shader_bloodsplat(bloodSpr, bloodImg, self_sprite, self_image)
+var bloodSpr = argument0, // Sprite index for the bloodsplat
+    bloodImg = argument1; // Image index
+    selfSpr = argument2;
+    selfImage = argument3;
 
 // Set the shader
-shader_set(shdBurning);
+shader_set(shdTextureOverlay);
 
 // Get access to the uniforms so we can set their values
-var uBurning = shader_get_sampler_index(shdBurning, "uBurning");
-var uBurningUV = shader_get_uniform(shdBurning, "uBurningUV");
-var uSpriteUV = shader_get_uniform(shdBurning, "uSpriteUV");
+var u_Blood    = shader_get_sampler_index(shdTextureOverlay, "u_Blood");
+var u_BloodUV  = shader_get_uniform(shdTextureOverlay, "u_BloodUV");
+var u_SpriteUV = shader_get_uniform(shdTextureOverlay, "u_SpriteUV");
+var u_alphaAmount = shader_get_uniform(shdTextureOverlay, "alphaAmount");
 
 // Set the uniform values
-var texBurning = sprite_get_texture(_burningSprite, _burningImage);
-var uvBurning = sprite_get_uvs(_burningSprite, _burningImage);
-texture_set_stage(uBurning, texBurning);
-shader_set_uniform_f(uBurningUV, uvBurning[0], uvBurning[1], uvBurning[2], uvBurning[3]);
+var bloodTex = sprite_get_texture(bloodSpr, bloodImg);
+var bloodUVs = sprite_get_uvs(bloodSpr, bloodImg);
+texture_set_stage(u_Blood, bloodTex);
+shader_set_uniform_f(u_BloodUV, bloodUVs[0], bloodUVs[1], bloodUVs[2], bloodUVs[3]);
 
-var uvSprite = sprite_get_uvs(sprite_index, image_index); // <- should be the enemy sprite
-shader_set_uniform_f(uSpriteUV, uvSprite[0], uvSprite[1], uvSprite[2], uvSprite[3]);
+var spriteUVs = sprite_get_uvs(selfSpr, selfImage); // <- should be the enemy sprite
+shader_set_uniform_f(u_SpriteUV, spriteUVs[0], spriteUVs[1], spriteUVs[2], spriteUVs[3]);
+shader_set_uniform_f(u_alphaAmount, sin_move(0.2, 0.65, 10, 0));

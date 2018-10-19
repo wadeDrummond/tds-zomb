@@ -3,11 +3,15 @@ A small project by Jackson Drummond.
 
 Changelog
 
+Version 0.407 - October 18th, 2018
++ Rewrote resource counter entirely.
+
 Version 0.406 - October 17th, 2018
 + Added explosion object. Does not appear in standard gameplay as of yet.
 + Made debug outlines blink.
 + Added "window_size" command. (Only applicable on Windows);
 + Added Ben Walker mode. Credit to Gabe Bellew.
++ Added qualities to weapon pickups.
 + Temporary: Changed starting time of day.
 
 Version 0.405 - October 15th, 2018

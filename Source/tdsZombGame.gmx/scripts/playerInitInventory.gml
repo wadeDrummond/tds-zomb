@@ -6,7 +6,7 @@ enum Resources
     }
 
 resMap = ds_map_create();
-resMap[? Resources.woodenPlanks] = 0;
+resMap[? Resources.woodenPlanks] = 25;
 
 resTextScale[0] = 0;
 

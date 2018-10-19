@@ -27,13 +27,43 @@
             <kind>1</kind>
             <string>///Initialize
 
-minRadius = 250;
-maxRadius = 270;
+minRadius = 220;
+maxRadius = 300;
 randomDir = irandom(360);
 pl_light_init(256, merge_colour(merge_colour(c_yellow, c_orange, 0.7), c_black, 0.25), 1);
 alarm[0] = 4;
 
 audio_play_sound_at(sndFire, x, y, 0, 450, 600, 1, true, 1);
+alarm[1] = room_speed * 0.5;
+burningIndex = 0;
+
+burningSpeed = 0.2;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Update Burning Index
+
+//burningIndex = irandom(sprite_get_number(texBurning) - 1);
+alarm[1] = room_speed * 0.1;
 </string>
           </argument>
         </arguments>
@@ -96,6 +126,8 @@ alarm[0] = irandom_range(10, 15);
 var mixAmount = abs(lengthdir_y(1, randomDir));
 randomDir += irandom_range(-30, 30);
 pl_light_set_radius(lerp(minRadius, maxRadius, mixAmount));
+
+burningIndex += burningSpeed;
 </string>
           </argument>
         </arguments>
@@ -120,8 +152,7 @@ pl_light_set_radius(lerp(minRadius, maxRadius, mixAmount));
             <kind>1</kind>
             <string>///Draw with Shader
 
-exit;
-//shaderSetBurning(sprite_index, image_index, sprBurning, image_index);
+shaderSetBurning(texBurning, 0, sprite_index, image_index);
 draw_self();
 shader_reset();
 </string>

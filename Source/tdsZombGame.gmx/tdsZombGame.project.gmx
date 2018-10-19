@@ -110,7 +110,7 @@
       <sprite>sprites\zoneFootstepsSprite</sprite>
       <sprite>sprites\zoneNoTile</sprite>
     </sprites>
-    <sprite>sprites\sprBurning</sprite>
+    <sprite>sprites\texBurning</sprite>
     <sprites name="Effects">
       <sprite>sprites\effExplosion1</sprite>
       <sprite>sprites\effExplosion2</sprite>
@@ -158,12 +158,13 @@
       <script>scripts\draw_rectangle_width.gml</script>
       <script>scripts\draw_sprite_blend.gml</script>
       <script>scripts\draw_triangle_width.gml</script>
+      <script>scripts\number_format.gml</script>
       <script>scripts\scale_canvas.gml</script>
       <script>scripts\sin_move.gml</script>
+      <script>scripts\sleep.gml</script>
       <script>scripts\string_parse.gml</script>
       <script>scripts\within_range.gml</script>
       <script>scripts\wrap.gml</script>
-      <script>scripts\sleep.gml</script>
     </scripts>
     <scripts name="Game">
       <scripts name="Extensions">
@@ -344,6 +345,7 @@
     <shader type="GLSLES">shaders\shdMain.shader</shader>
     <shader type="GLSLES">shaders\shdFlash.shader</shader>
     <shader type="GLSLES">shaders\shdSheen.shader</shader>
+    <shader type="GLSLES">shaders\shdTextureOverlay.shader</shader>
   </shaders>
   <fonts name="fonts">
     <font>fonts\fontCrit</font>

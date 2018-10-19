@@ -29,10 +29,10 @@
 
 event_inherited();
 
-maxHealth = 20;
-Health = 20;
+maxHealth = 50;
+Health = 50;
 lerpBar = 0;
-lerpHealth = 20;
+lerpHealth = 50;
 lerpBarAlpha = 0;
 
 Scale = 1;
@@ -97,7 +97,7 @@ lerpAmount = (Scale / fullScale);
     
 Scale = lerp(Scale, fullScale, 0.2);
 flashFactor = lerp(flashFactor, 0, 0.2);
-lerpHealth = lerp(lerpHealth, Health, 0.1);
+lerpHealth = lerp(lerpHealth, Health, 0.2);
 flashAmount = lerp(0, 0.35, flashFactor);
 </string>
           </argument>
