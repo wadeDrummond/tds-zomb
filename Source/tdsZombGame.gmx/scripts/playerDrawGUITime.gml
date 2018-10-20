@@ -2,15 +2,16 @@
 
 var Width = display_get_gui_width();
 var Height = display_get_gui_height();
-var textShadowLength = 4;
+var _overallScale = hudScale;
+var textShadowLength = 4 * _overallScale;
 
 var xPos = Width - 16;
 var yPos = Height - 16;
 
 draw_set_font(fontTime);
 var boxBorder = 8;
-var textWidth = string_width(timeString) + textShadowLength;
-var textHeight = string_height(timeString) + textShadowLength;
+var textWidth = (string_width(timeString) + textShadowLength) * _overallScale;
+var textHeight = (string_height(timeString) + textShadowLength) * _overallScale;
 
 var x1 = xPos - textWidth - boxBorder;
 var y1 = yPos - textHeight - boxBorder;
@@ -32,6 +33,6 @@ var timeColour = merge_colour(c_red, c_purple, Mix);
 var darkTimeColour = merge_colour(merge_colour(c_purple, c_red, Mix), c_black, 0.65);
 
 draw_set_colour(darkTimeColour);
-draw_text(xPos + (textShadowLength / 2), yPos + (textShadowLength / 2), timeString);
+draw_text_transformed(xPos + (textShadowLength / 2), yPos + (textShadowLength / 2), timeString, _overallScale, _overallScale, 0);
 draw_set_colour(timeColour);
-draw_text(xPos - (textShadowLength / 2), yPos - (textShadowLength / 2), timeString);
+draw_text_transformed(xPos - (textShadowLength / 2), yPos - (textShadowLength / 2), timeString, _overallScale, _overallScale, 0);

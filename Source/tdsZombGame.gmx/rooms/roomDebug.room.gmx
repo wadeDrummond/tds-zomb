@@ -51,44 +51,44 @@
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="objWoodenWallHorizontal" x="256" y="256" name="inst_D2A7CD6C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWoodenWallHorizontal" x="512" y="256" name="inst_9348977C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWoodenWallHorizontal" x="768" y="256" name="inst_96EA4473" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWoodenWallHorizontal" x="1024" y="256" name="inst_5EC5BD67" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWoodenWallHorizontal" x="1280" y="256" name="inst_5C9C27F7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWoodenWallHorizontal" x="1536" y="256" name="inst_202B2515" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWoodenWallHorizontal" x="1792" y="256" name="inst_6BB1BF01" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWoodenWallHorizontal" x="2048" y="256" name="inst_41331DBD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWoodenWallHorizontal" x="2304" y="256" name="inst_8DA7CB40" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWoodenWallHorizontal" x="512" y="1536" name="inst_35416EF5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWoodenWallHorizontal" x="768" y="1536" name="inst_9FE58D89" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWoodenWallHorizontal" x="1024" y="1536" name="inst_403E522E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWoodenWallHorizontal" x="1280" y="1536" name="inst_4093CA15" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWoodenWallHorizontal" x="1536" y="1536" name="inst_1DBEF784" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWoodenWallHorizontal" x="1792" y="1536" name="inst_AAF6211B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWoodenWallHorizontal" x="2048" y="1536" name="inst_ABFB45D7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWoodenWallHorizontal" x="2304" y="1536" name="inst_E5641B64" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWoodenWallVertical" x="256" y="256" name="inst_FA17B67F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWoodenWallVertical" x="256" y="512" name="inst_755D1680" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWoodenWallVertical" x="256" y="768" name="inst_CED3AD1F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWoodenWallHorizontal" x="256" y="1024" name="inst_98E7BC01" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWoodenWallHorizontal" x="512" y="1024" name="inst_AB7CECB0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWoodenWallHorizontal" x="768" y="1024" name="inst_8D8AB31F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWoodenWallHorizontal" x="1024" y="1024" name="inst_2B2C145B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWoodenWallHorizontal" x="1280" y="1024" name="inst_B1EDF20A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWoodenWallHorizontal" x="1536" y="1024" name="inst_D5BFE08A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWoodenWallVertical" x="1280" y="768" name="inst_8D21DDCC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWoodenWallVertical" x="1280" y="256" name="inst_EBA4BF72" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWoodenWallVertical" x="2560" y="1280" name="inst_5E04C493" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWoodenWallVertical" x="2560" y="1024" name="inst_F83ECBC8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWoodenWallVertical" x="2560" y="768" name="inst_FC709BA6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWoodenWallVertical" x="2560" y="512" name="inst_C535222E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWoodenWallVertical" x="2560" y="256" name="inst_E1E84820" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWoodenWallVertical" x="512" y="1024" name="inst_8EDB9F76" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWoodenWallH" x="256" y="256" name="inst_D2A7CD6C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWoodenWallH" x="512" y="256" name="inst_9348977C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWoodenWallH" x="768" y="256" name="inst_96EA4473" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWoodenWallH" x="1024" y="256" name="inst_5EC5BD67" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWoodenWallH" x="1280" y="256" name="inst_5C9C27F7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWoodenWallH" x="1536" y="256" name="inst_202B2515" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWoodenWallH" x="1792" y="256" name="inst_6BB1BF01" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWoodenWallH" x="2048" y="256" name="inst_41331DBD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWoodenWallH" x="2304" y="256" name="inst_8DA7CB40" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWoodenWallH" x="512" y="1536" name="inst_35416EF5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWoodenWallH" x="768" y="1536" name="inst_9FE58D89" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWoodenWallH" x="1024" y="1536" name="inst_403E522E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWoodenWallH" x="1280" y="1536" name="inst_4093CA15" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWoodenWallH" x="1536" y="1536" name="inst_1DBEF784" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWoodenWallH" x="1792" y="1536" name="inst_AAF6211B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWoodenWallH" x="2048" y="1536" name="inst_ABFB45D7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWoodenWallH" x="2304" y="1536" name="inst_E5641B64" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWoodenWallV" x="256" y="256" name="inst_FA17B67F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWoodenWallV" x="256" y="512" name="inst_755D1680" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWoodenWallV" x="256" y="768" name="inst_CED3AD1F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWoodenWallH" x="256" y="1024" name="inst_98E7BC01" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWoodenWallH" x="512" y="1024" name="inst_AB7CECB0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWoodenWallH" x="768" y="1024" name="inst_8D8AB31F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWoodenWallH" x="1024" y="1024" name="inst_2B2C145B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWoodenWallH" x="1280" y="1024" name="inst_B1EDF20A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWoodenWallH" x="1536" y="1024" name="inst_D5BFE08A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWoodenWallV" x="1280" y="768" name="inst_8D21DDCC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWoodenWallV" x="1280" y="256" name="inst_EBA4BF72" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWoodenWallV" x="2560" y="1280" name="inst_5E04C493" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWoodenWallV" x="2560" y="1024" name="inst_F83ECBC8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWoodenWallV" x="2560" y="768" name="inst_FC709BA6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWoodenWallV" x="2560" y="512" name="inst_C535222E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWoodenWallV" x="2560" y="256" name="inst_E1E84820" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWoodenWallV" x="512" y="1024" name="inst_8EDB9F76" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCrate" x="2048" y="512" name="inst_D382D272" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCrate" x="512" y="512" name="inst_C93C7C8A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTable" x="2304" y="1280" name="inst_2D555006" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWoodenWallVertical" x="2560" y="1024" name="inst_FA515502" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWoodenWallV" x="2560" y="1024" name="inst_FA515502" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPlayer" x="1664" y="1760" name="inst_9FEE3499" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCrate" x="768" y="512" name="inst_F42F74C0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCrate" x="1024" y="512" name="inst_4A7481C7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -101,15 +101,15 @@
     <instance objName="objFirepit" x="1696" y="1888" name="inst_26055119" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objGame" x="0" y="0" name="inst_80827E97" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objWeaponPickup" x="1696" y="2016" name="inst_2BCBD32B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWoodenDoorVertical" x="1280" y="512" name="inst_C245FD7E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWoodenDoorV" x="1280" y="512" name="inst_C245FD7E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="zoneFootsteps" x="288" y="288" name="inst_B42451DB" locked="0" code="zoneType = footstepTypes.Concrete;" scaleX="8.875" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="zoneFootsteps" x="544" y="1056" name="inst_EB72131A" locked="0" code="zoneType = footstepTypes.Concrete;" scaleX="7.875" scaleY="1.875" colour="4294967295" rotation="0"/>
-    <instance objName="objWoodenWallVertical" x="1280" y="640" name="inst_59610BF2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWoodenWallV" x="1280" y="640" name="inst_59610BF2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="zoneFootsteps" x="512" y="1280" name="inst_4489679B" locked="0" code="zoneType = footstepTypes.Concrete;&#xA;" scaleX="0.125984251499176" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWoodenDoorHorizontal" x="2048" y="1024" name="inst_5379E14C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWoodenWallHorizontal" x="1792" y="1024" name="inst_54CE1F45" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWoodenWallHorizontal" x="2304" y="1024" name="inst_8E94909A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWoodenWallHorizontal" x="2176" y="1024" name="inst_D6B4B11B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWoodenDoorH" x="2048" y="1024" name="inst_5379E14C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWoodenWallH" x="1792" y="1024" name="inst_54CE1F45" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWoodenWallH" x="2304" y="1024" name="inst_8E94909A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWoodenWallH" x="2176" y="1024" name="inst_D6B4B11B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tileFloors" x="256" y="256" w="256" h="256" xo="0" yo="0" id="10000420" name="inst_46ABAD1E" depth="260" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

@@ -40,13 +40,13 @@ enum doorType
 
 switch (object_index)
     {
-        case objWoodenDoorHorizontal:
+        case objWoodenDoorH:
             {
                 Orientation = doorType.Horizontal;
                 standardMask = maskDoorH;
                 break;
             }
-        case objWoodenDoorVertical:
+        case objWoodenDoorV:
             {
                 Orientation = doorType.Vertical;
                 standardMask = maskDoorV;

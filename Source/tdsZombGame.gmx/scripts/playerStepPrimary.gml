@@ -1,5 +1,7 @@
 ///playerStepPrimary();
 
+hudScale = sin_move(0.5, 2, 2, 0);
+
 if (instance_exists(objCommandline))
     exit;
 

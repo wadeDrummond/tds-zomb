@@ -70,6 +70,9 @@ switch (real(argument0))
                 clAddBlank();
                 clAddMessage("ben_walker", baseColour);
                 clAddMessage("Toggle Ben Walker mode.", subColour);
+                clAddBlank();
+                clAddMessage("play_ambient", baseColour);
+                clAddMessage("Forces an ambient sound to play.", subColour);
                 clAddMessage("Showing page (2/2) of 'help'.", c_yellow)
                 break;
             }

@@ -101,9 +101,9 @@ if (keyboard_check_pressed(vk_f12))
     
     
 //Ambient Noises (Guitar or otherwise)
-if !ambientIsPlaying()
+if !ambientIsPlaying(ambientNoises) or (forcePlay)
     {
-        if (ambientTimer &lt;= 0)
+        if (ambientTimer &lt;= 0) or (forcePlay)
             {
                 var checkAmbient = ambientNoises[irandom(ambientCount - 1)];
                 
@@ -113,7 +113,12 @@ if !ambientIsPlaying()
                 lastAmbient = checkAmbient;
                 audio_play_sound(lastAmbient, 1, false);
                 
+                var _String = sound_get_name(lastAmbient);
+                clAddMessage("Now playing ambient noise: " + _String, c_yellow);
+                
                 ambientTimer = irandom_range(minAmbient, maxAmbient);
+                
+                forcePlay = false;
             }
         else
             ambientTimer = max(ambientTimer - 1, 0);
@@ -201,10 +206,15 @@ uPoss = shader_get_uniform(shdMain, "poss");//uniform for x,y
 ambientNoises[0] = ambGuitar1;
 ambientNoises[1] = ambGuitar2;
 ambientNoises[2] = ambRadio1;
+ambientNoises[3] = ambRadio2;
+ambientNoises[4] = ambGuitar3;
+ambientNoises[5] = ambGuitar4;
 ambientCount = array_length_1d(ambientNoises);
 
+forcePlay = false;
+
 minAmbient = room_speed * 85;
-maxAmbient = room_speed * 240;
+maxAmbient = room_speed * 360;
 ambientTimer = irandom_range(minAmbient, maxAmbient);
 lastAmbient = ambientNoises[irandom(ambientCount - 1)];
 </string>

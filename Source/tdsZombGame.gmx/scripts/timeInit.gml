@@ -1,7 +1,7 @@
 ///timeInit();
 
 Time = 0;
-defaultTimeScale = 0.65;
+defaultTimeScale = 1;
 timeScale = defaultTimeScale * 1;
 Speed = (1 / (room_speed * timeScale));
 drawTime = lerp(lerp(0, 4, Time), 0, Time);
@@ -11,8 +11,8 @@ var Brightness = lerp(0.05, 1, Time);
 
 pl_option_set_ambience(ambientColour, 0.25);
 
-Minutes = 30;
-Hours = 24;
+Minutes = 0;
+Hours = 11;
 
 global.timeHours = Hours;
 global.timeMinutes = Minutes;

@@ -26,8 +26,9 @@ weaponStaminaAmt[Weapons.Weapon] = (real) - How much Stamina using this weapon c
 weaponMeleeMinFrame[Weapons.Weapon] = (real) - Sprite stuff.
 weaponMeleeMaxFrame[Weapons.Weapon] = (real) - Sprite stuff.
 */
+
 wepStats[Weapons.Unarmed] = "sprPlayerUnarmedIdle|sprPlayerUnarmedWalk|sprPlayerUnarmedAttack1|Melee|0.5|4|96|1.15|65|4|22|32";
-wepStats[Weapons.Knife] = "sprPlayerKnifeIdle|sprPlayerKnifeWalk|sprPlayerKnifeAttack1|Melee|0.45|8|90|1|45|6|6|10";
+wepStats[Weapons.Knife] = "sprPlayerKnifeIdle|sprPlayerKnifeWalk|sprPlayerKnifeAttack1|Melee|0.45|8|90|1|45|6|26|38";
 wepStats[Weapons.Pistol] = "sprPlayerPistolIdle|sprPlayerPistolWalk|sprPlayerPistolAttack|Gun|0.2|4|0|0.915|65|4|0|0";
 
 wepStatsAltCount[Weapons.Unarmed] = 2;

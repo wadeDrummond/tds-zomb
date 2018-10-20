@@ -16,7 +16,10 @@
       <sounds name="Ambience">
         <sound>sound\ambGuitar1</sound>
         <sound>sound\ambGuitar2</sound>
+        <sound>sound\ambGuitar3</sound>
+        <sound>sound\ambGuitar4</sound>
         <sound>sound\ambRadio1</sound>
+        <sound>sound\ambRadio2</sound>
       </sounds>
       <sounds name="Footsteps">
         <sound>sound\footstepConcrete1</sound>
@@ -144,6 +147,7 @@
       <script>scripts\clGetResponse.gml</script>
       <script>scripts\clHelp.gml</script>
       <script>scripts\clInit.gml</script>
+      <script>scripts\clInterpretCommand.gml</script>
       <script>scripts\clParseInput.gml</script>
       <script>scripts\clPlayerType.gml</script>
       <script>scripts\clSetGlobalVariable.gml</script>
@@ -159,6 +163,7 @@
       <script>scripts\draw_sprite_blend.gml</script>
       <script>scripts\draw_triangle_width.gml</script>
       <script>scripts\number_format.gml</script>
+      <script>scripts\round_n.gml</script>
       <script>scripts\scale_canvas.gml</script>
       <script>scripts\sin_move.gml</script>
       <script>scripts\sleep.gml</script>
@@ -407,14 +412,15 @@
       <object>objects\objCrate</object>
       <object>objects\objFirepit</object>
       <object>objects\objTable</object>
-      <object>objects\objWoodenDoorHorizontal</object>
-      <object>objects\objWoodenDoorVertical</object>
-      <object>objects\objWoodenWallHorizontal</object>
-      <object>objects\objWoodenWallVertical</object>
+      <object>objects\objWoodenDoorH</object>
+      <object>objects\objWoodenDoorV</object>
+      <object>objects\objWoodenWallH</object>
+      <object>objects\objWoodenWallV</object>
     </objects>
     <objects name="Zones">
       <object>objects\zoneFootsteps</object>
     </objects>
+    <object>objects\objBuildingCreator</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\roomInit</room>
@@ -424,7 +430,7 @@
   </rooms>
   <constants number="6">
     <constant name="debugMode">true</constant>
-    <constant name="gameVersion">"Version 0.406. Compiled " + date_time_string(GM_build_date) + "."</constant>
+    <constant name="gameVersion">"Version 0.41. Compiled " + date_time_string(GM_build_date) + "."</constant>
     <constant name="gameDemoDisclaimer">"This demo was created by Jackson Drummond. Some rights reserved.#Some copyrighted materials used with permission from the copright holders.#Some materials fall under Creative Commons licenses.#This is a very early alpha build of the game and does not represent the final product."</constant>
     <constant name="buildingWidth">2560</constant>
     <constant name="buildingHeight">1280</constant>
@@ -436,6 +442,7 @@
   <audiogroups name="audiogroups">
     <audiogroup name="audiogroup_default"/>
     <audiogroup name="agSounds"/>
+    <audiogroup name="agAmbient"/>
   </audiogroups>
   <TutorialState>
     <IsTutorial>0</IsTutorial>

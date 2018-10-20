@@ -18,7 +18,7 @@ Time = (((60 * (Hours - 1)) + Minutes) / 60) / 24;
 drawTime = lerp(lerp(0, 4, Time), 0, Time);
 
 var ambientColour = merge_colour(c_blue, merge_colour(c_orange, c_white, drawTime), drawTime);
-var Brightness = lerp(max(lerp(-0.15, 0, drawTime), 0), 0.75, drawTime);
+var Brightness = lerp(max(lerp(-0.15, 0, drawTime), 0), 0.65, drawTime);
 
 pl_option_set_ambience(ambientColour, Brightness);
 

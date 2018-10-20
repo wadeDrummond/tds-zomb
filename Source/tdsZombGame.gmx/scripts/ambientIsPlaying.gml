@@ -1,6 +1,14 @@
-///ambientIsPlaying();
+///ambientIsPlaying(array);
 
-var Check1 = audio_is_playing(ambGuitar1);
-var Check2 = audio_is_playing(ambGuitar2);
+var _Array = argument0;
+var _Length = array_length_1d(_Array);
 
-return (Check1 or Check2);
+for (var i = 0; i < _Length; i ++)
+    {
+        if (audio_is_playing(_Array[i]))
+            {
+                return true;
+            }
+    }
+
+return false;

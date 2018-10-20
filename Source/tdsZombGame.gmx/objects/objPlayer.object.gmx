@@ -87,7 +87,7 @@ var randomInputAmount = 0.45;
 
 if (randomInputs)
     {
-        if (irandom(3) == 0)
+        if (irandom(1) == 0)
             {
                 randomToggled = true;
                 randomUp = random(randomInputAmount);
@@ -189,6 +189,9 @@ playerStepCamera();
             <string>///Save Variables for Comparisons
 
 Health = statsMap[? Stats.Health];
+
+xWindowMousePrevious = window_mouse_get_x();
+yWindowMousePrevious = window_mouse_get_y();
 </string>
           </argument>
         </arguments>

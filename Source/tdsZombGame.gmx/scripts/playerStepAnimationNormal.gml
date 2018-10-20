@@ -7,13 +7,9 @@ var animSpeedV = vsp[0];
 
 var Moving = (((x - xprevious) != 0) or (y - yprevious != 0));
 if (abs((animSpeedH * moveSpeed)) > 0) and (abs((animSpeedV * moveSpeed)) > 0)
-    {
-        var walkAnimSpeed = (abs((animSpeedH * moveSpeed) * 0.5) + abs((animSpeedV * moveSpeed) * 0.5))
-    }
+    var walkAnimSpeed = (abs((animSpeedH * moveSpeed) * 0.5) + abs((animSpeedV * moveSpeed) * 0.5))
 else
-    {
-        var walkAnimSpeed = (abs((animSpeedH * moveSpeed)) + (abs((animSpeedV * moveSpeed))));
-    }
+    var walkAnimSpeed = (abs((animSpeedH * moveSpeed)) + (abs((animSpeedV * moveSpeed))));
 
 animSpeed = clamp((walkAnimSpeed / moveSpeed) * animationFactor, 0, 1);
 legAnimSpeed = animSpeed * legAnimationFactor;
@@ -32,8 +28,6 @@ else
     }
 
 var checkPointDir = point_direction(x, y, mouse_x, mouse_y);
-
-playerAngle = checkPointDir;
 
 if ((animSpeedH * moveSpeed) != 0) or ((animSpeedV * moveSpeed) != 0)
     legAngle = point_direction(0, 0, (animSpeedH * moveSpeed), (animSpeedV * moveSpeed));

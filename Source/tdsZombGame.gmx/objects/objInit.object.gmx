@@ -28,7 +28,9 @@
             <string>///Preload Sounds
 
 finishedLoading = false;
+
 audio_group_load(agSounds);
+audio_group_load(agAmbient);
 
 canContinue = false;
 alarm[0] = room_speed * 0.5;
@@ -85,12 +87,11 @@ canContinue = true;
             <string>/// Run Variables
 
 var Check1 = audio_group_is_loaded(agSounds);
-var Check2 = canContinue;
+var Check2 = audio_group_is_loaded(agAmbient);
+var Check3 = canContinue;
 
-if (Check1 and Check2)
-    {
-        room_goto_next();
-    }
+if (Check1 and Check2 and Check3)
+    room_goto_next();
 </string>
           </argument>
         </arguments>
@@ -115,6 +116,7 @@ if (Check1 and Check2)
             <kind>1</kind>
             <string>///Wait Until Sounds have Loaded
 
+/*
 var Type = async_load[? "type"];
 var idGroup = async_load[? "group_id"];
 
@@ -123,9 +125,7 @@ audioCheck = (async_load[? "type"] == "audiogroup_load");
 if (audioCheck)
     {
         if (idGroup == (agSounds))
-            {
-                finishedLoading = true;
-            }
+            finishedLoading = true;
     }
 </string>
           </argument>
@@ -154,13 +154,15 @@ if (audioCheck)
 draw_set_colour(c_black);
 draw_rectangle(-400, -400, room_width + 400, room_height + 400, false);
 
+var _Progress = string((audio_group_load_progress(agSounds) + audio_group_load_progress(agAmbient)) / 2);
+
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 draw_set_colour(c_white);
 draw_set_alpha(1);
 draw_set_font(fontLoading);
 
-var String = "LOADING#" + string(audio_group_load_progress(agSounds)) + "% COMPLETE";
+var String = "LOADING SOUNDS#" + _Progress + "% COMPLETE";
 draw_text_transformed(room_width / 2, room_height / 2, String, 2, 2, 0);
 </string>
           </argument>

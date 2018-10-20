@@ -3,6 +3,26 @@ A small project by Jackson Drummond.
 
 Changelog
 
+Version 0.41 - October 19th, 2018
++ Rescaled Stats/Time HUD elements.
++ Rewrote how the command console interprets commands.
++ Added "play_ambient" command.
++ Game begins at 11:00 AM now.
++ Firepit now draws properly.
++ Added texture overlay shader effect to firepit.
++ Added new ambient noise (ambRadio2).
++ Sorted Ambient sounds into their own audio group.
++ Rewrote the audio group loading screen.
++ Clarified audio group loading screen.
++ Reanimated all player sprites for weapons to share a common resting position.
++ Stats drain slower.
++ Stats now round up (ceil) instead of rounding to the nearest integer (standard).
++ Time goes by slower.
++ Rewrote gamepad movement. Should now be fully functional.
++ Fixed a bug where the resource counter would have an incorrectly sized rectangle border.
++ Player now starts with 5 wooden planks.
++ Begun work on a building editor for procedurally placed buildings.
+
 Version 0.407 - October 18th, 2018
 + Rewrote resource counter entirely.
 + Gave crates more health.
@@ -12,7 +32,7 @@ Version 0.407 - October 18th, 2018
 Version 0.406 - October 17th, 2018
 + Added explosion object. Does not appear in standard gameplay as of yet.
 + Made debug outlines blink.
-+ Added "window_size" command. (Only applicable on Windows);
++ Added "window_size" command. (Only applicable on Windows).
 + Added Ben Walker mode. Credit to Gabe Bellew.
 + Added qualities to weapon pickups.
 + Temporary: Changed starting time of day.
@@ -24,7 +44,7 @@ Version 0.405 - October 15th, 2018
 
 Version 0.404 - October 15th, 2018
 + Sorted sprites.
-+ Added new ambient noise (Radio1);
++ Added new ambient noise (Radio1).
 + Increased time between ambient noises.
 + Rewrote how doors work.
 + Added door collision.
@@ -40,7 +60,7 @@ Version 0.403 - October 15th, 2018
 + Made framerate + current frame always on GUI. (now referred to as custom overlay)
 + Custom overlay gives more details.
 + Separated inputs into own script.
-+ Cleaned up pickup script; now branches to all interact-ables.
++ Cleaned up pickup script. now branches to all interact-ables.
 + Added a slight sway to the camera.
 + Wooden planks from a broken crate now go in the general direction of the punch. (varies 45 degrees)
 + Crates now slightly flash when hit.
@@ -97,7 +117,7 @@ Version 0.39 - October 9th, 2018
 + Updated loading text.
 + Updated organization of Stats initialization.
 + Added "set_stat" command.
-+ Added listener velocity for player; should make moving fast sound a little better.
++ Added listener velocity for player. should make moving fast sound a little better.
 + Updated gamepad inputs.
 + Cleaned up input script.
 - Pressing Shift no longer forces crits. (Debugging tool)

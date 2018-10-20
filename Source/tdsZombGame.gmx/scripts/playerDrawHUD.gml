@@ -7,8 +7,9 @@ var Height = 720;
 var guiBorder = 6;
 var yPos = Height - guiBorder;
 var xPos = guiBorder;
-var barWidth = 384 * 0.5;
-var barHeight = 48 * 0.5;
+var _overallScale = hudScale;
+var barWidth = (384 * 0.5) * _overallScale;
+var barHeight = (48 * 0.5) * _overallScale;
 var xPlayer = (x - view_xview);
 var yPlayer = (y - view_yview);
 var colMix = sin_move(0, 0.5, 5, 0);
@@ -41,16 +42,16 @@ for (var i = 0; i < statAmount; i ++)
         
         draw_healthbar(xPos, yPos - barHeight, xPos + barWidth, yPos, drawValue, c_dkgray, drawColourMin[i], drawColourMax[i], 0, true, true);
         
-        var textShadowLength = 3;
-        var statString = statTitle[i] + " - " + string((round(currentStat[i])));
+        var textShadowLength = 3 * _overallScale;
+        var statString = statTitle[i] + " - " + string((ceil(currentStat[i])));
         
         draw_set_alpha(1);
         draw_set_colour(c_black);
-        draw_text(xBarCenter + textShadowLength, yBarCenter - barHeight + textShadowLength, statString);
+        draw_text_transformed(xBarCenter + textShadowLength, yBarCenter - barHeight + textShadowLength, statString, _overallScale, _overallScale, 0);
 
         draw_set_alpha(1);
         draw_set_colour(c_white);
-        draw_text(xBarCenter, yBarCenter - barHeight, statString);
+        draw_text_transformed(xBarCenter, yBarCenter - barHeight, statString, _overallScale, _overallScale, 0);
         
         yPos -= (barHeight + guiBorder)
     }

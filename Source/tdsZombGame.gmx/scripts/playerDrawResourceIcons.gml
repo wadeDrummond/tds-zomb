@@ -14,7 +14,7 @@ var _Height = display_get_gui_height();
 var _iconSprite = sprResourceIcons;
 var _iconScale = 0.75;
 var _textScale = 1.25;
-var _overallScale = 0.5;
+var _overallScale = hudScale;
 var _Angle = 0;
 var _Blend = c_white;
 var _Alpha = 1;
@@ -42,22 +42,22 @@ var _y2 = 0;
 
 for (var i = 0; i < resAmount; i ++)
     {
-        var _String = number_format(resourceAmount[i]);
+        var _String = string(resourceAmount[i]);
         var _xPos = _Width - _compensatedWidth - _exteriorBorder;
-        var _yPos = _compensatedHeight + _exteriorBorder + _yAdd;
+        var _yPos = _spriteHeight + _exteriorBorder + _yAdd;
         var _xTextPos = _xPos - _compensatedWidth - _textBorder;
         var _yTextPos = _yPos;
-        var _textHeight = (string_height(_String) * _totalTextScale) + resTextScale[i];
+        var _textHeight = (string_height(_String)) + resTextScale[i];
         var _textWidth = (string_width(_String) * _totalTextScale) + resTextScale[i];
         var _maxHeight = max(_textHeight, (_spriteHeight * _totalIconScale));
-        _yAdd += _maxHeight;
+        _yAdd += (_spriteHeight * _totalIconScale);
         _xSubtract = max(_xSubtract, _textWidth);
     }
 
 var _x1 = (_xPos - _exteriorBorder - _xSubtract - _compensatedWidth);
 var _y1 = (_interiorBorder);
 var _x2 = (_Width - _interiorBorder);
-var _y2 = (_yPos + _yAdd);
+var _y2 = (_yPos + _exteriorBorder);
 
 draw_set_alpha(0.35);
 draw_set_colour(c_dkgray);

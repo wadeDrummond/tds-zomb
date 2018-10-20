@@ -2,8 +2,8 @@
 
 switch (argument0)
     {
-        case objWoodenWallHorizontal:
-        case objWoodenWallVertical:
+        case objWoodenWallH:
+        case objWoodenWallV:
         case objCorner:
         case objCrate:
         case objTable:
