@@ -97,9 +97,6 @@ placedInstancesCount = 0;
 
 application_surface_draw_enable(false);
 
-if !directory_exists(buildingDirectory)
-    directory_create(buildingDirectory);
-
 deletionMode = 0;
     
 Frame = 0;

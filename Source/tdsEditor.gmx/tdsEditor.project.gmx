@@ -368,8 +368,8 @@
     </shaders>
     <shader type="GLSLES">shaders\shdBktGlitch.shader</shader>
     <shader type="GLSLES">shaders\shdBktGlitchMac.shader</shader>
-    <shader type="GLSLES">shaders\shdMain.shader</shader>
     <shader type="GLSLES">shaders\shdFlash.shader</shader>
+    <shader type="GLSLES">shaders\shdMain.shader</shader>
     <shader type="GLSLES">shaders\shdSheen.shader</shader>
     <shader type="GLSLES">shaders\shdTextureOverlay.shader</shader>
   </shaders>

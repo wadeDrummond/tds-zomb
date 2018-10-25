@@ -69,8 +69,6 @@ mask_index = standardMask;
     
 debugDoor = false;
 Sound = -1;
-doorNoise[0] = sndDoor1;
-doorNoise[1] = sndDoor2;
 
 shadowDistance = 4;
 revertFactor = 1;

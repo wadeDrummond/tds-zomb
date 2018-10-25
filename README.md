@@ -3,6 +3,9 @@
 
 ###### Changelog
 
+###### Version 0.421 - October 24th, 2018
++ Fixed bug with tiles being invisible in the editor.
+
 ###### Version 0.42 - October 24th, 2018
 + Mostly finished building editor. Instructions below on how to use it.
 - The web demo is either outdated or broken as of now.
