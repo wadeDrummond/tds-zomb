@@ -27,6 +27,9 @@
             <kind>1</kind>
             <string>///Preload Sounds
 
+globalvar buildingPercentage;
+buildingPercentage = 0.35;
+
 finishedLoading = false;
 
 audio_group_load(agSounds);
@@ -37,6 +40,8 @@ alarm[0] = room_speed * 0.5;
 
 globalvar Shake;
 Shake = 0;
+
+gameInitParticles();
 </string>
           </argument>
         </arguments>
@@ -60,6 +65,9 @@ Shake = 0;
           <argument>
             <kind>1</kind>
             <string>///Can Continue
+
+audio_group_load(agSounds);
+audio_group_load(agAmbient);
 
 canContinue = true;
 </string>

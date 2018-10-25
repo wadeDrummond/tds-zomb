@@ -3,7 +3,76 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="2" name="datafiles"/>
+  <datafiles number="11" name="datafiles">
+    <datafile>
+      <name>connectedBuildings1.build</name>
+      <exists>-1</exists>
+      <size>15930</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>connectedBuildings1.build</filename>
+    </datafile>
+    <datafile>
+      <name>smallBuildings1.build</name>
+      <exists>-1</exists>
+      <size>15120</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>smallBuildings1.build</filename>
+    </datafile>
+    <datafile>
+      <name>smallBuildings2.build</name>
+      <exists>-1</exists>
+      <size>10355</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>smallBuildings2.build</filename>
+    </datafile>
+    <datafile>
+      <name>Shack1.build</name>
+      <exists>-1</exists>
+      <size>22109</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>Shack1.build</filename>
+    </datafile>
+  </datafiles>
   <NewExtensions>
     <extension index="0">extensions\prettylight</extension>
     <extension index="1">extensions\bktGlitch</extension>
@@ -120,11 +189,11 @@
       <sprite>sprites\effExplosion3</sprite>
       <sprite>sprites\effExplosion4</sprite>
     </sprites>
+    <sprite>sprites\zoneTiles</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bckConcrete</background>
     <background>background\bckGrass</background>
-    <background>background\bckGrassOld</background>
     <background>background\tileCorners</background>
     <background>background\tileFloors</background>
     <background>background\bckConcreteOld</background>
@@ -156,20 +225,30 @@
       <script>scripts\clSetVariable.gml</script>
     </scripts>
     <scripts name="Custom Functions">
+      <script>scripts\buffer_write_slice.gml</script>
       <script>scripts\collision_line_point.gml</script>
       <script>scripts\collision_triangle.gml</script>
       <script>scripts\draw_circle_width.gml</script>
       <script>scripts\draw_rectangle_width.gml</script>
       <script>scripts\draw_sprite_blend.gml</script>
       <script>scripts\draw_triangle_width.gml</script>
+      <script>scripts\ds_list_save.gml</script>
+      <script>scripts\ds_map_save.gml</script>
+      <script>scripts\json_beautify.gml</script>
+      <script>scripts\json_load.gml</script>
       <script>scripts\number_format.gml</script>
       <script>scripts\round_n.gml</script>
       <script>scripts\scale_canvas.gml</script>
       <script>scripts\sin_move.gml</script>
       <script>scripts\sleep.gml</script>
+      <script>scripts\string_load.gml</script>
       <script>scripts\string_parse.gml</script>
+      <script>scripts\string_save.gml</script>
       <script>scripts\within_range.gml</script>
       <script>scripts\wrap.gml</script>
+      <script>scripts\json_save.gml</script>
+      <script>scripts\instance_deactivate_object_region.gml</script>
+      <script>scripts\instance_activate_object_region.gml</script>
     </scripts>
     <scripts name="Game">
       <scripts name="Extensions">
@@ -227,6 +306,10 @@
         </scripts>
       </scripts>
       <script>scripts\gameAddBuildingTypes.gml</script>
+      <script>scripts\gameBuildingLoad.gml</script>
+      <script>scripts\gameBuildingPlace.gml</script>
+      <script>scripts\gameBuildingSave.gml</script>
+      <script>scripts\gameBuiltinJson.gml</script>
       <script>scripts\gameGetObjectNames.gml</script>
       <script>scripts\gameGetResourceCounts.gml</script>
       <script>scripts\gameInit.gml</script>
@@ -303,6 +386,7 @@
           <script>scripts\playerStepAnimationAttacking.gml</script>
           <script>scripts\playerStepAnimationNormal.gml</script>
           <script>scripts\playerStepCamera.gml</script>
+          <script>scripts\playerStepDeactivateRegion.gml</script>
           <script>scripts\playerStepFootsteps.gml</script>
           <script>scripts\playerStepInputs.gml</script>
           <script>scripts\playerStepInteracting.gml</script>
@@ -362,6 +446,7 @@
     <font>fonts\fontStats</font>
     <font>fonts\fontLoading</font>
     <font>fonts\fontTime</font>
+    <font>fonts\fontBuildingEditor</font>
   </fonts>
   <objects name="objects">
     <objects name="Actors">
@@ -378,11 +463,13 @@
     <objects name="Debugging">
       <object>objects\objCommandline</object>
       <object>objects\objDebug</object>
+      <object>objects\objRoomPicture</object>
     </objects>
     <objects name="Details">
       <object>objects\objTrees</object>
       <object>objects\objSmear</object>
     </objects>
+    <object>objects\objBuildingCreator</object>
     <objects name="Effects">
       <object>objects\objDamageText</object>
       <object>objects\objExplosion</object>
@@ -407,6 +494,7 @@
       <object>objects\parLight</object>
       <object>objects\parSolid</object>
       <object>objects\parWall</object>
+      <object>objects\parInGame</object>
     </objects>
     <objects name="World Placement">
       <object>objects\objCrate</object>
@@ -420,7 +508,7 @@
     <objects name="Zones">
       <object>objects\zoneFootsteps</object>
     </objects>
-    <object>objects\objBuildingCreator</object>
+    <object>objects\objBuildingCreatorBackground</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\roomInit</room>
@@ -428,13 +516,14 @@
     <room>rooms\roomDebug</room>
     <room>rooms\roomLevelEditor</room>
   </rooms>
-  <constants number="6">
+  <constants number="7">
     <constant name="debugMode">true</constant>
-    <constant name="gameVersion">"Version 0.41. Compiled " + date_time_string(GM_build_date) + "."</constant>
+    <constant name="gameVersion">"Version 0.42. Compiled " + date_time_string(GM_build_date) + "."</constant>
     <constant name="gameDemoDisclaimer">"This demo was created by Jackson Drummond. Some rights reserved.#Some copyrighted materials used with permission from the copright holders.#Some materials fall under Creative Commons licenses.#This is a very early alpha build of the game and does not represent the final product."</constant>
-    <constant name="buildingWidth">2560</constant>
-    <constant name="buildingHeight">1280</constant>
-    <constant name="buildingDirectory">working_directory + "Buildings\"</constant>
+    <constant name="buildingWidth">4096</constant>
+    <constant name="buildingHeight">2048</constant>
+    <constant name="buildingDirectory">game_save_id  + "\Buildings\"</constant>
+    <constant name="includedBuildingDirectory">working_directory</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>
